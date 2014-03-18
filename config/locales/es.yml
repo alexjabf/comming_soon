@@ -1,0 +1,762 @@
+es:
+  "true": "Si"
+  "false": "No"
+  home: "Inicio"
+  go_back: "Regresar"
+  cancel: "Cancelar"
+  logout : "Cerrar Sesión "
+  login: "Iniciar Sesión"
+  password: "Contraseña"
+  password_confirmation: "Confirmación de Contraseña"
+  send: "Enviar"
+  sign_up: "Regístrate"
+  welcome: "Bienvenido %{name}"
+  edit_my_account: "Editar mi cuenta"
+  are_you_sure?: "¿Esta seguro que desea eliminar este(a) %{model}?"
+  main_title: "Rails To Go"
+  avatar:
+    crop_image: "Recorta la imagen"
+    crop_submit: "Actualizar Imagen"
+    destroy: "Borrar avatar"
+    destroy_sure: "¿Borrar el avatar seleccionado?"
+    error:
+      no_file: "Tienes que seleccionar un fichero"
+      no_image_file: "El fichero no es válido, tiene que ser una imagen"
+      no_width: "La selección no puede estar vacía"
+    list: "Tienes estos avatars"
+    new: "Crear un nuevo avatar"
+    new_short: "Nuevo avatar"
+    no_avatars: "No tienes ningún avatar, ¡crea uno!"
+    one: "Avatar"
+    other: "Avatares"
+    original: "Imagen original"
+    preview: "Vista previa"
+    profile_change: "Cambia tu avatar"
+    set_default: "Seleccionar"
+    set_default_sure: "¿Seleccionar este avatar?"
+    text:
+      new: "... o sube uno nuevo"
+      use: "Usa uno de tus avatares..."
+    upload: "Subir"  
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+    formats:
+      default: ! "%d/%m/%Y"
+      long: ! "%A, %d de %B de %Y"
+      long_no_time: ! "%A, %d de %B de %Y"      
+      short: ! "%d de %b"
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: cerca de 1 hora
+        other: cerca de %{count} horas
+      about_x_months:
+        one: cerca de 1 mes
+        other: cerca de %{count} meses
+      about_x_years:
+        one: cerca de 1 año
+        other: cerca de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_days:
+        one: 1 día
+        other: ! "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: ! "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: ! "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: ! "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Año
+  errors: &errors
+    format: ! "%{attribute} %{message}"
+    messages:
+      accepted: debe ser aceptado
+      blank: no puede estar en blanco
+      confirmation: no coincide con la confirmación
+      empty: no puede estar vacío
+      equal_to: debe ser igual a %{count}
+      even: debe ser un número par
+      exclusion: está reservado
+      greater_than: debe ser mayor que %{count}
+      greater_than_or_equal_to: debe ser mayor o igual que %{count}
+      inclusion: no está incluído en la lista
+      invalid: es inválido
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor o igual que %{count}
+      not_a_number: no es un número
+      not_an_integer: debe ser un entero
+      odd: debe ser un número non
+      record_invalid: ! "La validación falló: %{errors}"
+      taken: ya ha sido tomado
+      too_long:
+        one: es demasiado largo (máximo 1 caracter)
+        other: es demasiado largo (máximo %{count} caracteres)
+      too_short:
+        one: es demasiado corto (mínimo 1 caracter)
+        other: es demasiado corto (mínimo %{count} caracteres)
+      wrong_length:
+        one: longitud errónea (debe ser de 1 caracter)
+        other: longitud errónea (debe ser de %{count} caracteres)
+    template:
+      body: ! "Revise que los siguientes campos sean válidos:"
+      header:
+        one: ! "%{model} no pudo guardarse debido a 1 error"
+        other: ! "%{model} no pudo guardarse debido a %{count} errores"
+  helpers:
+    select:
+      prompt: Por favor selecciona (Obligatorio)
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ","
+        format: ! "%u%n"
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ","
+      precision: 2
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! "%n %u"
+        units:
+          billion: mil millones
+          million: millónes
+          quadrillion: mil billones
+          thousand: mil
+          trillion: billónes
+          unit: ""
+      format:
+        delimiter: ! ","
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ! ","
+    precision:
+      format:
+        delimiter: ! ","
+  support:
+    array:
+      last_word_connector: ! " y "
+      two_words_connector: ! " y "
+      words_connector: ! ", "
+  time:
+    am: am
+    formats:
+      default: ! "%a, %d de %b de %Y a las %H:%M:%S %Z"
+      long: ! "%A, %d de %B de %Y a las %I:%M %p"
+      short: ! "%d de %b a las %H:%M hrs"
+      hour: ! "%H:%M hrs"
+    pm: pm
+  actions:
+    add: "Agregar %{model}"
+    remove: "Remover %{model}"
+    show: "Mostrar %{model}"
+    edit: "Editar %{model}"
+    destroy: "Eliminar %{model}"
+    new:  "Crear %{model}"
+    search:  "Buscar %{model}"    
+    searching:  "Buscando %{model}......"    
+    newing:  "Creando %{model}......"
+    createing:  "Creando %{model}......"    
+    editing:  "Actualizando %{model}......"
+    updateing:  "Actualizando %{model}......"
+    destroying:  "Eliminando %{model} Seleccionados......"
+    loging_in: "Iniciando Sesión......"
+    created: 
+      male: "El %{model} fue exitosamente creado."
+      female: "La %{model} fue exitosamente creada."
+    updated: 
+      male: "El %{model} fue exitosamente editado."
+      female: "La %{model} fue exitosamente editada."
+    destroyed: 
+      male: "El %{model} fue exitosamente eliminado."
+      female: "La %{model} fue exitosamente eliminada."
+    multiple_destroy:
+      male: "Eliminar %{model} seleccionados"
+      female: "Eliminar %{model} seleccionados"      
+    multiple_destroyed:
+      male: "Los %{model} fueron exitosamente eliminados."
+      female: "Las %{model} fueron exitosamente eliminadas."      
+    return_to:  "Regresar a %{model}"
+
+  layouts:
+    application:
+      filter: Filtrar %{model} 
+      wrong_format: "Formato incorrecto, sólo se permiten "
+      required: "Obligatorio"
+      not_required: "Opcional"
+      all_records: Todos
+      show_all_items: Mostrar Todos
+      not_match_found_for: "No se encontro algun registro con: "      
+      are_you_sure_multiple_destroy:
+        male: ¿Esta seguro que desea eliminar los %{model} seleccionados?
+        female: ¿Esta seguro que desea eliminar las %{model} seleccionadas?
+        
+  messages:
+    error:
+      you_must_select_at_least_one: 
+        male: Debe seleccionar almenos un %{model}.        
+        female: Debe seleccionar almenos un %{model}.
+    validators:
+      username: ": Formato de nombre de usuario incorrecto."
+      global_validation: ": Formato incorrecto."
+      address: ": Formato de dirección incorrecto."
+      names: ": Formato incorrecto."
+      number: ": Formato número incorrecto."
+      decimal: ": Formato de número decimal incorrecto."      
+      email: ": Formato de correo elecronico incorrecto."
+      login: ": Formato de nombre de usuario o correo elecronico incorrecto."      
+      url: ": Formato de url incorrecto."
+      password: ": Formato de contraseña incorrecto."
+      other: ": Formato incorrecto."
+      scaffold: Scaffold
+      phone: ": Formato de teléfono incorrecto."
+      min_length: ": caracteres mínimos."
+      max_length: ": caracteres maximos."
+      date: ": Formato de fecha incorrecto."
+      text: ": Formato de texto incorrecto."
+      boolean: ": Formato de texto incorrecto."
+      currency: ": Formato de texto incorrecto."
+      price: ": Formato de texto incorrecto."
+      
+  devise:
+    sessions:
+      new:
+        fullname: "Nombre: "
+        first_name: "Nombre(s): "
+        last_name: "Apellido(s): "
+        phone1: "Teléfono: "
+        phone2: "Teléfono Celular: "
+        address1: "Dirección: "
+        address2: "Colonia"
+        city: "Ciudad: "
+        state: "Estado: "
+        zip: "Código Postal: "
+        country: "País: "
+        role_id: "Rol: "
+        active: "Activo: "
+        email: "Correo Electrónico: "
+        username: "Nombre De Usuario: "
+        login: "Correo Electrónico o Nombre de Usuario: "
+        password: "Contraseña: "
+        password_confirmation: "Confirmación De Contraseña: "
+        created_at: "Registrado El: "
+        updated_at: "Actualizado El: "
+        last_sign_in_at: "Acceso por última vez el día: "
+        login: "Iniciar Sesión: "
+    registrations:
+      new:
+        fullname: "Nombre: "
+        first_name: "Nombre(s): "
+        last_name: "Apellido(s): "
+        phone1: "Teléfono: "
+        cellphone: "Teléfono Celular: "
+        address1: "Dirección: "
+        address2: "Colonia: "
+        city: "Ciudad: "
+        state: "Estado: "
+        zip: "Código Postal: "
+        country: "País: "
+        role_id: "Rol: "
+        active: "Activo: "
+        email: "Correo Electrónico: "     
+        username: "Nombre De Usuario: "
+        password: "Contraseña: "
+        password_confirmation: "Confirmación De Contraseña: "
+        created_at: "Registrado El: "
+        updated_at: "Actualizado El: "
+        last_sign_in_at: "Acceso por última vez el día: "
+    confirmations:
+      resend: "Reenviar Instrucciones de Confirmación" 
+    links:
+      sign_in: "Iniciar Sesión"
+      sign_up: "Registrarse"
+      forgot_pwd: "¿Olvidó su contraseña?"
+      conf_inst: "¿No recibió las instrucciones de confirmación?"
+      unlock_inst: "¿No recibió las instrucciones de desbloqueo?"
+      access_links: "¿Necesita ayuda para ingresar a su cuenta?"      
+    mailer:
+      confirm:
+        conf_legend: "Usted puede confirmar su cuenta de correo electrónico a través del siguiente enlace:"
+        usr&pwd: "Su usuario y contraseña son: "
+        conf_account: "Confirmar su cuenta"
+      reset:   
+    passwords:
+      mail:
+        message: "Alguien ha cambiado su contraseña, si usted no solicitó este cambio por favor de clic en el siguiente link el cual estará disponible 24hrs después de haber recibido este correo: "
+        message_two: "De lo contrario haga caso omiso de este correo."
+        token_expired: "Si el token para resetear su contraseña ha expirado, favor de dar clic en el siguiente link:"
+        subject: "Su contraseña ha cambiado"
+      change_your_password: "Cambiar Su Contraseña"
+      new: "Nueva Contraseña"
+      confirm: "Confirmar Nueva Contraseña"
+      change_my: "Cambiar Mi Contraseña"
+      forgot: "¿Olvidé mi contraseña?"
+      send_reset_inst: "Envíenme las instrucciones para reestablecer mi contraseña"
+      requested: "Alguien ha solicitado restablecer su contraseña, puede hacer esto mediante la liga que aparece a continuación."
+      ignore: "Si usted no solicitó esto, por favor ignore este correo electrónico."
+      wont_change: "Su contraseña no cambiará hasta que accese a la liga que aparece arriba y cree una nueva contraseña."
+    unlock:
+      has_been_locked: "Su cuenta ha sido bloqueada debido un excesivo número de intentos fallidos de autenticación."
+      click_link: "De clic a la siguiente liga para desbloquear su cuenta:"
+      account: "Desbloquear Mi Cuenta"
+      resend: "Reenviar Instrucciones de Desbloqueo"
+      email: "Correo Electrónico" 
+      
+  will_paginate:
+    previous_label: "&#8592; Anteriores"
+    next_label: "Siguientes &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "Ninguno encontrado"
+        one:   "Mostrando 1 %{model}"
+        other: "Mostrando todos (%{count})"
+      single_page_html:
+        zero:  "Ninguno encontrado"
+        one:   "Mostrando <b>1</b> %{model}"
+        other: "Mostrando todos <b>(%{count})</b>"
+      multi_page: "Mostrando %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrando <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b> %{count}</b> en total"  
+  
+  roles:
+    show:
+      id: "Id: "      
+      name: "Nombre: "
+      protected: "Protegido: "
+      description: "Descripción: "
+      superadmin: "Súper Administrador: "
+      administrator: "Administrador: "
+      guess: "Invitado: "       
+      created_at: "Registrado el: "
+      updated_at: "Actualizado el: "
+    index:
+      id: "Id " 
+      name: "Nombre"
+      protected: "Protegido"
+      description: "Descripción"
+      superadmin: "Súper Administrador"
+      administrator: "Administrador: "
+      guess: "Invitado"
+      created_at: "Registrado el"
+      updated_at: "Actualizado el"      
+  users:
+    edit_my_account: "Editar Mi Cuenta"
+    editing_user: "Editar Usuario"  
+    add_user: "Agregar Usuario"    
+    cancel: "Cancelar"   
+    change_avatar: "Cambiar Imagen: "
+    show:
+      id: "Id: "      
+      fullname: "Nombre: "
+      first_name: 'Nombre(s): '
+      last_name: 'Apellido(s): '
+      email: 'Correo Electrónico: '
+      phone: 'Teléfono: '
+      cellphone: 'Teléfono Celular: '
+      address1: 'Dirección: '
+      address2: 'Colonia: '
+      city: 'Ciudad: '
+      state: 'Estado: '
+      country: 'País: '
+      zipcode: 'Código Postal: '
+      gender: 'Género: '
+      username: 'Nombre De Usuario: '
+      password: 'Contraseña: '
+      password_confirmation: 'Confirmación De Contraseña: '
+      active: 'Activo: '
+      role_id: 'Rol: '
+      created_at: 'Registrado El: '
+      updated_at: 'Actualizado El: '
+      last_sign_in_at: "Acceso por última vez el día : " 
+    index:
+      id: "Id "      
+      fullname: "Nombre"
+      first_name: 'Nombre(s): '
+      last_name: 'Apellido(s): '
+      email: 'Correo Electrónico: '
+      phone: 'Teléfono: '
+      cellphone: 'Teléfono Celular: '
+      address1: 'Dirección: '
+      address2: 'Colonia: '
+      city: 'Ciudad: '
+      state: 'Estado: '
+      country: 'País: '
+      zipcode: 'Código Postal: '
+      gender: 'Género: '
+      username: 'Nombre De Usuario: '
+      password: 'Contraseña: '
+      password_confirmation: 'Confirmación De Contraseña: '
+      active: 'Activo: '
+      role_id: 'Rol: '
+      created_at: 'Registrado El: '
+      updated_at: 'Actualizado El: '
+      last_sign_in_at: "Acceso por última vez el día"
+  custom_scaffolds:
+    show:
+      id: 'Id: '
+      i18_scaffold_name: 'i18n_8Scaffold Name: '      
+      scaffold_name: 'Scaffold Name: '
+      columns_number: 'Columns Number: '
+      index_created_at: 'Index Created At: '
+      index_updated_at: 'Index Updated At: '
+      show_created_at: 'Show Created At: '
+      show_updated_at: 'Show Updated At: '
+      require_authentication: 'Require Authentication: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      scaffold_name: 'Scaffold Name'
+      i18_scaffold_name: 'i18n_8Scaffold Name'        
+      columns_number: 'Columns Number'
+      index_created_at: 'Index Created At'
+      index_updated_at: 'Index Updated At'
+      show_created_at: 'Show Created At'
+      show_updated_at: 'Show Updated At'
+      require_authentication: 'Require Authentication'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  column_attributes:
+    show:
+      id: 'Id: '
+      custom_scaffold_id: 'Custom Scaffold: '
+      column_name: 'Column Name: '
+      i18n_column_name: 'i18n Column Name: '
+      column_type: 'Column Type: '
+      is_readonly: 'Is Read Only: '
+      column_position: 'Column Position: '
+      column_description: 'Column Description: '
+      default_value: 'Default Value: '
+      is_required: 'Is Required: '
+      is_unique: 'Is Unique: '
+      validates_with_scope: 'Validates With Scope: '
+      select_display: 'Select Display: '
+      select_value: 'Select Value: '
+      min_length: 'Min Length: '
+      max_length: 'Max Length: '
+      scale_value: 'Scale Value: '
+      index_display: 'Index Display: '
+      show_display: 'Show Display: '
+      index_display_format: 'Index Display Format: '
+      index_display_format_option: 'Index Display Format Option: '
+      show_display_format: 'Show Display Format: '
+      show_display_format_option: 'Show Display Format Option: '
+      css_class: 'Custom Class: '
+      css_id: 'Custom: '
+      placeholder: 'Placeholder: '
+      title: 'Title: '
+      validation_type: 'Validation Type: '
+      scope_validation: 'Scope Validation: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      custom_scaffold_id: 'Custom Scaffold'
+      column_name: 'Column Name'
+      i18n_column_name: 'i18n Column Name'
+      column_type: 'Column Type'
+      is_readonly: 'Is Read Only'
+      column_position: 'Column Position'
+      column_description: 'Column Description'
+      default_value: 'Default Value'
+      is_required: 'Is Required'
+      is_unique: 'Is Unique'
+      validates_with_scope: 'Validates With Scope'
+      select_display: 'Select Display'
+      select_value: 'Select Value'
+      min_length: 'Min Length'
+      max_length: 'Max Length'
+      scale_value: 'Scale Value'
+      index_display: 'Index Display'
+      show_display: 'Show Display'
+      index_display_format: 'Index Display Format'
+      index_display_format_option: 'Index Display Format Option'
+      show_display_format: 'Show Display Format'
+      show_display_format_option: 'Show Display Format Option'
+      css_class: 'Custom Class'
+      css_id: 'Custom'
+      placeholder: 'Placeholder'
+      title: 'Title'
+      validation_type: 'Validation Type'
+      scope_validation: 'Scope Validation'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  permissions:
+    show:
+      id: 'Id: '
+      role_id: 'Role: '
+      model: 'Model: '
+      protected: 'Protected: '
+      private: 'Private: '
+      private_key: 'Private Key: '
+      foreign_key: 'Foreign Key: '
+      custom_action: 'Custom Action: '
+      custom_action_name: 'Custom Action Name: '
+      has_new: 'Has New: '
+      has_edit: 'Has Edit: '
+      has_show: 'Has Show: '
+      has_destroy: 'Has Destroy: '
+      has_index: 'Has Index: '
+      description: 'Description: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      role_id: 'Role'
+      model: 'Model'
+      protected: 'Protected'
+      private: 'Private'
+      private_key: 'Private Key'
+      foreign_key: 'Foreign Key'
+      custom_action: 'Custom Action'
+      custom_action_name: 'Custom Action Name'
+      has_new: 'Has New'
+      has_edit: 'Has Edit'
+      has_show: 'Has Show'
+      has_destroy: 'Has Destroy'
+      has_index: 'Has Index'
+      description: 'Description'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  #END OF VIEWS VARIABLES DO NOT DELETE OR MOVE OR TAB THIS COMMENT
+  
+  activerecord:
+    errors: 
+      template:
+        header:
+          one: "Un error evitó que este %{model} fuera registrado:"
+          other: "%{count} errores evitaron que este %{model} fuera registrado:"
+        body: "Se encontraron problemas con los siguientes campos:"
+      messages:
+        invalid_attachment_size: " sobrepasa el límite de tamaño permitido, elija un archivo diferente."
+        invalid_attachment_content_type: " inválido, elija un archivo diferente con la extension correspondiente."
+        taken: "registro ya existente."
+        invalid: "campo inválido."
+        blank: "no puede ser un campo vacío."
+        too_short: "valor demasiado corto."
+        too_long: "valor demasiado largo."
+        not_a_number: "no es un valor numérico." 
+        not_saved: "%{count} errores evitaron que este elemento ( %{model}) fuera registrado:"
+        rol_type: "Debe seleccionar al menos un tipo de rol."
+        access_denied: "Usted no tiene permiso para realizar esa acción."
+
+    models:
+      user: "Usuario"
+      users: "Usuarios"
+      role: "Rol"
+      roles: "Roles"
+      registration: "Registrarse"
+      registrations: "Registrarse"
+      session: "Iniciar Sesión"
+      sessions: "Iniciar Sesión"
+      welcome: "Bienvenido!"
+      welcomes: "Bienvenido!"
+      password: "Restablecer Contraseña"     
+      passwords: "Restablecer Contraseña"
+      confirmation:  "Reenviar Instrucciones de Confirmación"
+      confirmations:  "Reenviar Instrucciones de Confirmación"
+      unlock: "Desbloquear Cuenta"      
+      unlocks: "Desbloquear Cuenta"      
+      test: Prueba      
+      tests: Pruebas   
+      custom_scaffold: 'Catalogo Personalizado'
+      custom_scaffolds: 'Catalogos Personalizados'
+      column_attribute: 'Columna'
+      column_attributes: 'Columnas'
+      permission: 'Permiso'
+      permissions: 'Permisos'
+      #END OF MODELS DO NOT DELETE OR MOVE OR TAB THIS COMMENT
+      
+    attributes:
+      user:
+        first_name: 'Nombre(s): '
+        last_name: 'Apellido(s): '
+        email: 'Correo Electrónico: '
+        phone: 'Teléfono: '
+        cellphone: 'Teléfono Celular: '
+        address1: 'Dirección: '
+        address2: 'Colonia: '
+        city: 'Ciudad: '
+        state: 'Estado: '
+        country: 'País: '
+        zipcode: 'Código Postal: '
+        gender: 'Género: '
+        username: 'Nombre De Usuario: '
+        password: 'Contraseña: '
+        password_confirmation: 'Confirmación De Contraseña: '
+        active: 'Activo: '
+        role_id: 'Rol: '
+        remember_me: "Permanecer Conectado: "
+        password: "Contraseña: "
+        password_confirmation: "Confirmación de Contraseña: "
+        current_password: "Contraseña Actual: "
+        created_at: "Registrado el: "
+        updated_at: "Actualizado el: "        
+      role:
+        name: "Nombre: "
+        protected: "Protegido: "
+        description: "Descripción: "
+        superadmin: "Súper Administrador: "
+        administrator: "Administrador: "
+        guess: "Invitado: "
+        created_at: "Registrado el: "
+        updated_at: "Actualizado el: "        
+      custom_scaffold:
+        id: 'Id: '
+        scaffold_name: 'Nombre Del Catalogo: '
+        i18n_scaffold_name: "i18n Nombre: " 
+        i18n_id: "I18n de 'Id':"
+        i18n_created_at: "I18n de 'Creado El':"
+        i18n_updated_at: "I18n de 'Actualizado El':"
+        index_id: "Mostrar 'Id' en Indice: "
+        show_id: "Mostrar 'Id' en Detalles: "
+        columns_number: 'Número de Columnas: '
+        index_created_at: "Mostrar 'Creado El' en Indice: "
+        index_updated_at: "Mostrar 'Actualizado El' en Indice: "
+        show_created_at: "Mostrar 'Creado El' en Detalles: "
+        show_updated_at: "Mostrar 'Actualizado El' en Detalles: "
+        require_authentication: 'Requiere Autenticación: '
+        created_at: "Registrado el: "
+        updated_at: "Actualizado el: " 
+      column_attribute:
+        id: 'Id: '
+        custom_scaffold_id: 'Custom Scaffold: '
+        column_name: 'Column Name: '
+        i18n_column_name: 'i18n Column Name: '
+        column_type: 'Column Type: '
+        is_readonly: 'Is Read Only: '
+        column_position: 'Column Position: '
+        column_description: 'Column Description: '
+        default_value: 'Default Value: '
+        is_required: 'Is Required: '
+        is_unique: 'Is Unique: '
+        validates_with_scope: 'Validates With Scope: '
+        select_display: 'Select Display: '
+        select_value: 'Select Value: '
+        min_length: 'Min Length: '
+        max_length: 'Max Length: '
+        scale_value: 'Scale Value: '
+        index_display: 'Index Display: '
+        show_display: 'Show Display: '
+        index_display_format: 'Index Display Format: '
+        index_display_format_option: 'Index Display Format Option: '
+        show_display_format: 'Show Display Format: '
+        show_display_format_option: 'Show Display Format Option: '
+        css_class: 'Custom Class: '
+        css_id: 'Custom: '
+        placeholder: 'Placeholder: '
+        title: 'Title: '
+        validation_type: 'Validation Type: '
+        scope_validation: 'Scope Validation: '
+        created_at: 'Created At: '
+        updated_at: 'Updated At: '
+      permission:
+        id: 'Id: '
+        role_id: 'Role: '
+        model: 'Model: '
+        protected: 'Protected: '
+        private: 'Private: '
+        private_key: 'Private Key: '
+        foreign_key: 'Foreign Key: '
+        custom_action: 'Custom Action: '
+        custom_action_name: 'Custom Action Name: '
+        has_new: 'Has New: '
+        has_edit: 'Has Edit: '
+        has_show: 'Has Show: '
+        has_destroy: 'Has Destroy: '
+        has_index: 'Has Index: '
+        description: 'Description: '
+        created_at: 'Created At: '
+        updated_at: 'Updated At: '
+      #END OF FORM VARIABLES DO NOT DELETE OR MOVE OR TAB THIS COMMENT

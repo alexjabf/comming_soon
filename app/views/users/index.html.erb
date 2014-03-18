@@ -1,0 +1,51 @@
+<%= form_tag destroy_multiple_users_path, method: :delete, :id => "#{controller_name}-index" do %>
+<table>
+  <thead>
+    <tr>
+      <%if can? :destroy, User %>
+      <th><input id="select-all" type="checkbox"></input></th>
+      <%end%>
+      <th><%= t('layouts.application.actions') %></th>
+                        <th><%= t'.id' %></th>
+                                <th><%= t'.first_name' %></th>
+                                <th><%= t'.last_name' %></th>
+                                <th><%= t'.role_id' %></th>
+                                <th><%= t'.active' %></th>
+                                <th><%= t'.created_at' %></th>
+                  </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+                
+    
+      <% @model = user %> 
+        
+    <tr>
+      <%if can? :destroy, User %>
+      <td><%= check_box_tag "users[]", user.id, false, :class => 'check-all'%></td>
+      <%end%>
+      <td><%= render "partials/index_links" %></td>
+                                    <%if can? :show, User %>
+            <td><%=link_to user.id, user, :class => "btn btn-xs btn-primary" %></td>
+            <%else%>
+            <td><%= label user.id, user.id, :class => "btn btn-xs btn-default", :disabled => true%></td>
+            <%end%>
+                                                      <td><%= user.first_name %></td>
+                                                      <td><%= user.last_name %></td>
+                                          <td>
+            <% if user.role %>
+            <%= link_to_if((can? :show, Role), user.role.select_display, user.role, :title => t("actions.show",  model: t("activerecord.models.role"))) if user.role_id %>
+            <% end %>
+          </td>
+                                <td><%= t(user.active.to_s) %></td>
+                                <td><%= I18n.l user.created_at, :format => :long if user.created_at %></td>
+                  </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%if can? :destroy, User and @users.count > 0 %>
+<%= button_tag t("actions.multiple_destroy.male", model: t("activerecord.models.#{controller_name}").downcase), data: { confirm: t("layouts.application.are_you_sure_multiple_destroy.male", model: t("activerecord.models.#{controller_name}").downcase) }, :title => t("actions.multiple_destroy.male",  model: t("activerecord.models.#{controller_name}").downcase), :class => "btn btn-xs btn-danger", :id => "delete-selected-button" %>
+<%end%>
+<%end%>

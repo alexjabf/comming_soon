@@ -1,0 +1,47 @@
+<div style="margin-bottom: 10px;">
+  <%=link_to "#devise-links", :title => t("devise.links.access_links"), :class => "btn btn-xs btn-default", :'data-toggle'=>"modal", :'data-target'=>"#devise-links" do%>
+    <%=t("devise.links.access_links")%>
+  <%end%>
+</div>
+
+<div class="modal fade" id="devise-links" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><%= link_to t('devise.links.access_links') %></h4>
+      </div>
+      <div class="modal-body" >
+        <p>
+          <%- if controller_name != 'sessions' %>
+            <%= link_to t('devise.links.sign_in'), new_session_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to t('devise.links.sign_up'), new_registration_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+            <%= link_to t('devise.links.forgot_pwd'), new_password_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+            <%= link_to t('devise.links.conf_inst'), new_confirmation_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+            <%= link_to t('devise.links.unlock_inst'), new_unlock_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+            <% end -%>
+          <% end -%>
+        </p></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,34 @@
+<div class="btn-group">
+  <button class="btn btn-default btn-mini dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i>  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <%if can? :show, eval(controller_name.camelize.singularize) %>
+      <li><%=link_to @model, :title => t("actions.show",  model: t("activerecord.models.#{controller_name.singularize}")) do%>
+          <i class="icon-eye-open"></i><%=t("actions.show",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+        <%end%>
+      </li>
+    <%end%>
+    <%if can? :edit, eval(controller_name.camelize.singularize) %>
+      <li class="divider"></li>
+      <%if controller_name == "users" and @model.id != current_user.id%>
+        <li><%=link_to edit_admin_user_path(@model), :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}")) do%>
+            <i class="icon-pencil"></i><%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+          <%end%>
+        </li>
+      <%else%>
+        <li><%=link_to eval("edit_#{controller_name.singularize}_path(@model)"), :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}")) do%>
+            <i class="icon-pencil"></i><%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+          <%end%>
+        </li>
+      <%end%>
+    <%end%>
+    <% unless @model.protected %>
+      <%if can? :destroy, eval(controller_name.camelize.singularize) %>
+        <li class="divider"></li>
+        <li><%=link_to @model, method: :delete, data: { confirm: t(:are_you_sure?, model: t("activerecord.models.#{controller_name.singularize}")) }, :title => t("actions.destroy",  model: t("activerecord.models.#{controller_name.singularize}")) do%>
+            <i class="icon-remove"></i><%=t("actions.destroy",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+          <%end%>
+        </li>
+      <%end%>
+    <%end%>
+  </ul>
+</div>

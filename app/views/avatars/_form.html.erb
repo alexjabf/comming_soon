@@ -1,0 +1,37 @@
+<div class="avatar-update">
+  <%= render partial: 'avatars/current',
+    object: avatarable,
+    as: :avatarable %>
+
+  <%= form_for avatarable, url: avatar_path, multipart: true do |f| %>
+    <%if can? :edit, User%>
+      <%= f.file_field :logo, "data-url" => avatar_path %>
+    <%end%>
+    <!--div style="padding:10px;font-weight:bolder; background-color:#446655;color: white;margin-top:10px;width:200px;overflow: hidden;">
+  <%#= t'users.change_avatar' %>  <input data-url="/avatar" id="user_logo" name="user[logo]" type="file" />
+    </div-->
+    <!--script language="JavaScript" type="text/javascript">
+      function HandleBrowseClick()
+      {
+        var fileinput = document.getElementById("browse");
+        fileinput.click();
+        var textinput = document.getElementById("filename");
+        textinput.value = fileinput.value;
+      }
+    </script>
+
+    <input type="file" id="browse" name="fileupload"  type="file" style="display: none"/>
+    <input type="text" id="filename" readonly="true" data-url="/avatar" id="user_logo" name="user[logo]"/>
+    <input  data-url="/avatar" id="user_logo" name="user[logo]" type="button" value="Click to select file" id="fakeBrowse" onclick="HandleBrowseClick();"/-->
+  <% end %>
+</div>
+
+<%#= render partial: 'avatars/progress' %>
+
+<%#= javascript_tag do %>
+<script>
+  $(function() {
+    AvatarForRails.edit();
+  });
+</script>
+<%# end %>

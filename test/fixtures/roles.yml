@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  protected: false
+  superadmin: false
+  administrator: false
+  guess: false
+  description: MyText
+
+two:
+  name: MyString
+  protected: false
+  superadmin: false
+  administrator: false
+  guess: false
+  description: MyText

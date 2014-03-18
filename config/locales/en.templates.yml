@@ -1,0 +1,28 @@
+en:
+  templates:
+    show:
+      id: 'Id: '
+      tmplate_name: 'Nombre De La Plantilla: '
+      cost: 'Costo: '
+      description: 'Descripción: '
+      created_at: 'Creada El: '
+      updated_at: 'Actualizada El: '
+    index:
+      id: 'Id'
+      tmplate_name: 'Nombre De La Plantilla'
+      cost: 'Costo'
+      description: 'Descripción'
+      created_at: 'Creada El'
+      updated_at: 'Actualizada El'
+  activerecord:
+    models:
+      template: 'Plantilla'
+      templates: 'Plantillas'
+    attributes:
+      template:
+        id: 'Id: '
+        tmplate_name: 'Nombre De La Plantilla: '
+        cost: 'Costo: '
+        description: 'Descripción: '
+        created_at: 'Creada El: '
+        updated_at: 'Actualizada El: '

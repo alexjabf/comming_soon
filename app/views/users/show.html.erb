@@ -1,0 +1,43 @@
+<div class="left-custom-column">
+                    <% unless @user.id.blank? %>
+        <p>
+          <b><%= t'.id' %></b> <%= @user.id %>
+        </p>
+        <% end %>
+                              <% unless @user.first_name.blank? %>
+        <p>
+          <b><%= t'.first_name' %></b> <%= @user.first_name %>
+        </p>
+        <% end %>
+                              <% unless @user.last_name.blank? %>
+        <p>
+          <b><%= t'.last_name' %></b> <%= @user.last_name %>
+        </p>
+        <% end %>
+                              <% unless @user.role.blank? %>
+        <p>
+          <b><%= t'.role_id' %></b> <%= link_to_if((can? :show, Role), @user.role.select_display, @user.role, :title => t("actions.show",  model: t("activerecord.models.role"))) %>
+        </p>
+        <% end %>
+            </div>
+
+<div class="right-custom-column">
+                    <% unless @user.active.blank? %>
+        <p>
+          <b><%= t'.active' %></b> <%= t(@user.active.to_s) %>
+        </p>
+        <% end %>
+                              <% unless @user.created_at.blank? %>
+        <p>
+          <b><%= t'.created_at' %></b> <%= I18n.l @user.created_at, :format => :long %>
+        </p>
+        <% end %>
+                              <% unless @user.updated_at.blank? %>
+        <p>
+          <b><%= t'.updated_at' %></b> <%= I18n.l @user.updated_at, :format => :long %>
+        </p>
+        <% end %>
+              
+</div>
+
+<!--HERE GOES NESTED INDEX-->

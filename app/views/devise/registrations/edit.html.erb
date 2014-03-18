@@ -1,0 +1,60 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="left-custom-column">
+    <div class="field">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name, :i18n_name => t('users.index.first_name'),  :required => true, :readonly => false, :minlength => 1, :maxlength => 30, :size => 40, :validation_type => 'name',    :placeholder => t('layouts.application.required'), :title => t('users.index.first_name') %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name, :i18n_name => t('users.index.last_name'),  :required => true, :readonly => false, :minlength => 1, :maxlength => 30, :size => 40, :validation_type => 'name',    :placeholder => t('layouts.application.required'), :title => t('users.index.last_name') %>
+    </div>
+  </div>
+  <div class="right-custom-column">
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, :autofocus => false, :required => true, :i18n_name => t('users.index.email'), :minlength => 6, :maxlength => 60, :size => 40, :validation_type => 'email', :placeholder => t('layouts.application.required'), :title => t('layouts.application.required')%>
+    </div>
+  </div>
+  <hr>
+  <div class="full-width">
+    <div class="left-custom-column">
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+      <div class="field">
+        <%= f.label :username %><br>
+        <%= f.text_field :username, :i18n_name => t('users.index.username'),  :required => true, :readonly => false, :minlength => 8, :maxlength => 20, :size => 40, :validation_type => 'username',    :placeholder => t('layouts.application.required'), :title => t('users.index.username') %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, :autocomplete => 'off', :i18n_name => t('users.index.password'),  :required => false, :readonly => false, :minlength => 8, :maxlength => 20, :size => 40, :validation_type => 'password',    :placeholder => t('layouts.application.required'), :title => t('users.index.password') %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, :autocomplete => 'off', :i18n_name => t('users.index.password_confirmation'),  :required => false, :readonly => false, :minlength => 8, :maxlength => 20, :size => 40, :validation_type => 'password',    :placeholder => t('layouts.application.required'), :title => t('users.index.password_confirmation') %>
+      </div>
+    </div>
+    <div class="right-custom-column">
+      <%if signed_in? and (current_user.role.superadmin or current_user.role.administrator)%>
+        <div class="field">
+          <%= f.label :role_id %><br>
+          <%= f.collection_select(:role_id, @roles_select, :id, :select_display, {:prompt => true}, {:i18n_name => t('users.index.role_id'),  :required => true, :readonly => false, :minlength => 1, :maxlength => 3, :validation_type => 'number',    :placeholder => t('layouts.application.required'), :title => t('users.index.role_id')}) %>  
+        </div>  
+        <div class="field" style="margin-top: 10px;">
+          <%= f.label :active %>
+          <%= f.check_box :active, :checked => true, :i18n_name => t('users.index.active'), :required => true, :readonly => false, :minlength => 1, :maxlength => 5, :size => 40, :validation_type => 'number',    :placeholder => t('layouts.application.required'), :title => t('users.index.active')%>
+        </div>
+      <%end%>
+      <div class="field" style="margin-top: 2px;">
+        <%= f.label :current_password %> <br>
+        <%= f.password_field :current_password, :autocomplete => 'off', :i18n_name => t('users.index.current_password'),  :required => true, :readonly => false, :minlength => 8, :maxlength => 20, :size => 40, :validation_type => 'password', :placeholder => t('layouts.application.required'), :title => t('layouts.devise.current_password') %>
+      </div>
+      <div>
+        <%= link_to t('users.cancel'), :back, :class => "btn btn-sm btn-default" %>
+        <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}").titlecase), :class => "btn btn-sm btn-primary"  %>
+      </div> 
+    </div>
+  </div>   
+
+<% end %>

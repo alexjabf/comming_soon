@@ -1,0 +1,13 @@
+<p><%#= t(:welcome) + " " + @resource.fullname%>!</p>
+
+<% unless @resource.password.nil? %>
+  <p><%= t('devise.mailer.confirm.usr&pwd') %></p>
+  <p><%= t('devise.registrations.new.username') + @resource.username %></p>
+  <p><%= t('devise.registrations.new.password') + @resource.password %></p>
+<% else %>
+  <p><%= t('devise.registrations.new.username') + @resource.username %></p>
+<% end %>
+
+<%= t('devise.mailer.confirm.conf_legend') %>
+<p><%= link_to t('devise.mailer.confirm.conf_account'), confirmation_url(@resource, :confirmation_token => @token) %></p>
+

@@ -1,0 +1,1410 @@
+<!doctype html>
+
+<!--
+        HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
+        Free to use
+-->
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en">
+      <script src="/assets///cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <!-- the "no-js" class is for Modernizr. --> 
+  <!DOCTYPE html>
+  <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+  <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+  <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <!-- =========================================
+    head
+    ========================================== -->
+    <head>
+
+
+      <!-- =========================================
+      Basic
+      ========================================== -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <title><%= content_for?(:title) ? yield(:title) : "Rails To Go : Comming Soon!"%></title>
+      <%= stylesheet_link_tag "application", :media => "all" %>
+      <%= render "partials/javascript" %>  
+      <%= javascript_include_tag "application", "#{session[:faye_url]}.js" %>
+      <%= csrf_meta_tags %>
+      <meta name="keywords" content="Horrus, HTML5, CSS3, responsive, Coming Soon, Under Construction, template" />
+      <meta name="author" content="M. Abo Elwafa" />
+      <meta name="robots" content="index follow"/>
+      <meta name="description" content="Horrus - Responsive HTML5 / CSS3 Coming Soon, Under Construction Template" />
+
+      <!-- =========================================
+      Mobile Configurations
+      ========================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta name="GOOGLEBOT" content="index follow"/>
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+
+      <!-- =========================================
+      fav & icons for iPhone and iPad
+      ========================================== -->
+      <link rel="shortcut icon" href="/assets/icons/favicon.png" />
+      <link rel="apple-touch-icon-precomposed" href="/assets/icons/icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/icons/icon@2x.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/icons/icon-72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/icons/icon-72@2x.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/icons/icon-60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/icons/icon-60@2x.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/icons/icon-76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/icons/icon-76@2x.png" />
+    </head><!-- /head -->
+
+
+
+
+    <!-- =========================================
+    body
+    ========================================== -->
+    <body>
+
+
+
+
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+
+
+
+      <!-- =========================================
+      Menu
+      ========================================== -->
+      <!-- nav-wrapper -->
+      <div id="nav-wrapper">
+        <!-- navbar -->
+        <div class="navbar">
+          <!-- container -->
+          <div class="container">
+            <!-- row -->
+            <div class="row">
+
+              <!-- col-md-12 -->
+              <div class="col-md-12">
+                <!-- navbar-header -->
+                <div class="navbar-header">
+
+                  <!-- Mobile Menu -->
+                  <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <i class="fa fa-bars"></i>
+                  </button><!-- / mobile Menu -->                  
+                  <!-- logo -->
+                  <!--a href="#home-section" class="navbar-brand scrollto" title="Horrus">
+                    <img src="/assets/images/logo.png" alt="logo" />                   
+                  </a--><!-- /logo -->
+
+                </div><!-- /navbar-header -->
+
+                <!-- navbar-collapse -->
+
+                <div class="navbar-collapse collapse">
+
+                  <!-- nav -->
+                  <ul class="nav navbar-nav navbar-right">
+
+                    <!-- Home -->
+                    <li>
+                      <a href="#home-section" title="Home" class="scrollto">
+                        RAILS TO GO
+                      </a>
+                    </li><!-- /Home -->
+                    <%if signed_in?%>
+                      <!-- Services -->
+                      <li>
+                        <a href="#services-section" title="Our Services"  class="scrollto">
+                          Services
+                        </a>
+                      </li><!-- /Services -->
+
+                      <!-- Portfolio -->
+                      <li>
+                        <a href="#portfolio-section-wrapper" title="Portfolio" class="scrollto">
+                          Portfolio
+                        </a>
+                      </li><!-- /Portfolio -->
+
+                      <!-- Team -->
+                      <li>
+                        <a href="#team-section" title="Team" class="scrollto">
+                          Team
+                        </a>
+                      </li><!-- /Team -->
+
+                      <!-- Contact Us -->
+                      <li>
+                        <a href="#contact-section" title="Contact Us" class="scrollto">
+                          Contact Us
+                        </a>
+                      </li><!-- /Contact Us -->
+                    <%end%>
+                  </ul><!-- /nav -->
+
+                </div><!-- /navbar-collapse -->
+              </div><!-- /col-md-12 -->
+
+            </div><!-- /row -->
+          </div><!-- /container -->
+        </div><!-- /navbar -->
+      </div><!-- /nav-wrapper -->
+
+
+
+
+      <!-- =========================================
+      Home Section
+      ========================================== -->
+      <!-- home-section -->
+      <section id="home-section">
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+
+            <!-- home-wrapper -->
+            <div id="home-wrapper">
+
+
+              <!-- welcome-msg -->
+              <div id="welcome-msg">
+                <h1>We are working on something big,<br />We will be online soon.</h1>
+              </div><!-- /welcome-msg -->
+
+
+              <!-- countdown_dashboard -->
+              <div id="countdown_dashboard">
+
+                <!-- Days -->
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                  <div class="days_dash">
+                    <div class="digit">0</div>
+                    <div class="digit">0</div>
+                    <span class="dash_title">days</span>
+                  </div>
+                </div><!-- /Days -->
+
+                <!-- Hours -->
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                  <div class="hours_dash">
+                    <div class="digit">0</div>
+                    <div class="digit">0</div>
+                    <span class="dash_title">hours</span>
+                  </div>
+                </div><!-- /Hours -->
+
+                <!-- Minutes -->
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                  <div class="minutes_dash">
+                    <div class="digit">0</div>
+                    <div class="digit">0</div>
+                    <span class="dash_title">minutes</span>
+                  </div>
+                </div><!-- /Minutes -->
+
+                <!-- Seconds -->
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                  <div class="seconds_dash">
+                    <div class="digit">0</div>
+                    <div class="digit">0</div>
+                    <span class="dash_title">seconds</span>
+                  </div>
+                </div><!-- /Seconds -->
+
+              </div><!-- /countdown_dashboard -->
+
+              <%if signed_in?%>
+                <!-- btn-nesto -->
+                <a class="btn btn-lg btn-nesto scrollto" title="View Portfolio" href="#portfolio-section-wrapper" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:500}">
+                  View Portfolio
+                </a><!-- /btn-nesto -->
+              <%end%>
+
+            </div><!-- /home-wrapper -->
+
+          </div><!-- /row -->
+        </div><!-- /container -->
+      </section><!-- /home-section -->
+
+
+
+      <%if signed_in?%>
+        <!-- =========================================
+        Services Section
+        ========================================== -->
+        <!-- services-section -->
+        <section id="services-section">
+          <!-- container -->
+          <div class="container">
+            <!-- row -->
+            <div class="row">
+
+              <!-- col-md-12 -->
+              <div class="col-md-12">
+
+                <!-- section-title -->
+                <div class="section-title" data-uk-scrollspy="{cls:'uk-animation-fade', delay:500}">
+                  <h1>Our Services</h1>
+                </div><!-- /section-title -->
+
+                <!-- section-desc -->
+                <div class="section-desc" data-uk-scrollspy="{cls:'uk-animation-fade', delay:700}">
+                  <p>When you get right down to it, success is all about value and trust.</p>
+                </div><!-- /section-desc -->
+
+              </div><!-- /col-md-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+                <!-- services-box -->
+                <div class="services-box" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:700}">
+
+                  <!-- services-icon -->
+                  <div class="services-icon">
+                    <i class="fa fa-tablet"></i>
+                  </div><!-- /services-icon -->
+
+                  <!-- services-title -->
+                  <div class="services-title">
+                    <h3>Design</h3>
+                  </div><!-- /services-title -->
+
+                  <!-- services-desc -->
+                  <div class="services-desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.</p>
+                  </div><!-- /services-desc -->
+
+                </div><!-- /services-box -->
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+                <!-- services-box -->
+                <div class="services-box" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:1000}">
+
+                  <!-- services-icon -->
+                  <div class="services-icon">
+                    <i class="fa fa-dollar"></i>
+                  </div><!-- /services-icon -->
+
+                  <!-- services-title -->
+                  <div class="services-title">
+                    <h3>Advertising</h3>
+                  </div><!-- /services-title -->
+
+                  <!-- services-desc -->
+                  <div class="services-desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.</p>
+                  </div><!-- /services-desc -->
+
+                </div><!-- /services-box -->
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+                <!-- services-box -->
+                <div class="services-box" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:1300}">
+
+                  <!-- services-icon -->
+                  <div class="services-icon">
+                    <i class="fa fa-code"></i>
+                  </div><!-- /services-icon -->
+
+                  <!-- services-title -->
+                  <div class="services-title">
+                    <h3>Development</h3>
+                  </div><!-- /services-title -->
+
+                  <!-- services-desc -->
+                  <div class="services-desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.</p>
+                  </div><!-- /services-desc -->
+
+                </div><!-- /services-box -->
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+                <!-- services-box -->
+                <div class="services-box" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:1600}">
+
+                  <!-- services-icon -->
+                  <div class="services-icon">
+                    <i class="fa fa-signal"></i>
+                  </div><!-- /services-icon -->
+
+                  <!-- services-title -->
+                  <div class="services-title">
+                    <h3>Analysis</h3>
+                  </div><!-- /services-title -->
+
+                  <!-- services-desc -->
+                  <div class="services-desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere, libero dolor molestie mi, vitae rutrum odio urna non dui.</p>
+                  </div><!-- /services-desc -->
+
+                </div><!-- /services-box -->
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+            </div><!-- row -->
+          </div><!-- container -->
+        </section><!-- Services-section -->
+
+
+
+
+        <!-- =========================================
+        Portfolio Section
+        ========================================== -->
+        <!-- portfolio-section-wrapper -->
+        <section id="portfolio-section-wrapper">
+
+          <!-- portfolio-section-container -->
+          <div id="portfolio-section-container">
+
+            <!-- container -->
+            <div class="container">
+              <!-- row -->
+              <div class="row">
+
+                <!-- col-md-12 -->
+                <div class="col-md-12">
+
+                  <!-- section-title -->
+                  <div class="section-title" data-uk-scrollspy="{cls:'uk-animation-fade', delay:500}">
+                    <h1>Our Work</h1>
+                  </div><!-- /section-title -->
+
+                  <!-- section-desc -->
+                  <div class="section-desc" data-uk-scrollspy="{cls:'uk-animation-fade', delay:700}">
+                    <p>We’re in the business of big ideas, Here are some of our latest and greatest.</p>
+                  </div><!-- /section-desc -->
+
+                </div><!-- /col-md-12 -->
+
+
+
+                <!-- owl-portfolio -->
+                <div class="owl-portfolio col-md-12">
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/1-1920x1200.jpg" title="Amazing Tiger - WebSite"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/1-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/2-1920x1200.jpg" title="Danbo Cold - Logo"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/2-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-video-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox-media" title="Angry Bear - Video" href="http://www.youtube.com/watch?v=rT_OmTMwvZI"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/3-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/4-1920x1200.jpg" title="Creative Hand - WebSite"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/4-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/5-1920x1200.jpg" title="Darts - Image"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/5-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/6-1920x1200.jpg" title="Chess - Brand"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/6-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-img-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox" data-fancybox-group="gallery1" href="/assets/portfolio/7-1920x1200.jpg" title="Flight - Image"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/7-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+
+                  <!-- portfolio-item -->
+                  <div class="portfolio-item">
+
+                    <!-- portfolio-containt -->
+                    <div class="portfolio-containt">
+
+                      <!-- portfolio-overlayer -->
+                      <div class="portfolio-overlayer">
+
+                        <!-- portfolio-anchors -->
+                        <a class="link" data-toggle="modal" href="#portfolio-video-Modal" title="Details">
+                          <i class="fa fa-link"></i>
+                        </a>
+
+                        <a class="preview fancybox-media" href="http://vimeo.com/76512663" title="Studing - Video"><i class="fa fa-search"></i></a>
+
+                      </div><!-- /portfolio-overlayer -->
+
+                      <!-- portfolio-image -->
+                      <img src="/assets/images/portfolio/thumbs/8-545x341.jpg" alt="Portfolio Image" />
+
+                    </div><!-- /portfolio-containt -->
+
+                  </div><!-- /portfolio-item -->
+
+                </div><!-- /owl-portfolio -->
+
+              </div><!-- /row -->
+            </div><!-- /container -->
+
+          </div><!-- /portfolio-section-container -->
+
+        </section><!-- /portfolio-section-wrapper -->
+
+
+
+
+        <!-- =========================================
+        Team Section
+        ========================================== -->
+        <!-- team-section -->
+        <section id="team-section">
+          <!-- container -->
+          <div class="container">
+            <!-- row -->
+            <div class="row">
+
+              <!-- col-md-12 -->
+              <div class="col-md-12">
+
+                <!-- section-title -->
+                <div class="section-title" data-uk-scrollspy="{cls:'uk-animation-fade', delay:500}">
+                  <h1>Our Awesome Team</h1>
+                </div><!-- /section-title -->
+
+                <!-- section-desc -->
+                <div class="section-desc" data-uk-scrollspy="{cls:'uk-animation-fade', delay:700}">
+                  <p>Our team is the brightest designers, data analysis, and software engineers.</p>
+                </div><!-- /section-desc -->
+
+              </div><!-- /col-md-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+                <!-- member-box-wrapper -->
+                <div class="member-box-wrapper" data-uk-scrollspy="{cls:'uk-animation-slide-left', delay:700}">
+                  <!-- member-box -->
+                  <div class="member-box">
+
+                    <!-- member-img -->
+                    <div class="member-img">
+                      <img src="/assets/images/team/1-290x290.jpg" alt="Member Image" />
+                    </div><!-- /member-img -->
+
+                    <!-- member-name -->
+                    <div class="member-name">
+                      <h2>Linda Russell</h2>
+                    </div><!-- /member-name -->
+
+                    <!-- member-title -->
+                    <div class="member-title">
+                      <h4>Designer</h4>
+                    </div><!-- /member-title -->
+
+                    <!-- member-social -->
+                    <div class="member-social">
+                      <ul>
+                        <li>
+                          <a href="#" title="Twitter" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Facebook" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Google +" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-google-plus"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- /member-social -->
+
+                  </div><!-- /member-box -->
+                </div><!-- /member-box-wrapper -->
+
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+                <!-- member-box-wrapper -->
+                <div class="member-box-wrapper" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:900}">
+                  <!-- member-box -->
+                  <div class="member-box">
+
+                    <!-- member-img -->
+                    <div class="member-img">
+                      <img src="/assets/images/team/2-290x290.jpg" alt="Member Image" />
+                    </div><!-- /member-img -->
+
+                    <!-- member-name -->
+                    <div class="member-name">
+                      <h2>Dwight Oli</h2>
+                    </div><!-- /member-name -->
+
+                    <!-- member-title -->
+                    <div class="member-title">
+                      <h4>Founder / CEO</h4>
+                    </div><!-- /member-title -->
+
+                    <!-- member-social -->
+                    <div class="member-social">
+                      <ul>
+                        <li>
+                          <a href="#" title="Twitter" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Facebook" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Google +" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-google-plus"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- /member-social -->
+
+                  </div><!-- /member-box -->
+                </div><!-- /member-box-wrapper -->
+
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+                <!-- member-box-wrapper -->
+                <div class="member-box-wrapper" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:1100}">
+                  <!-- member-box -->
+                  <div class="member-box">
+
+                    <!-- member-img -->
+                    <div class="member-img">
+                      <img src="/assets/images/team/3-290x290.jpg" alt="Member Image" />
+                    </div><!-- /member-img -->
+
+                    <!-- member-name -->
+                    <div class="member-name">
+                      <h2>Hailey Reid</h2>
+                    </div><!-- /member-name -->
+
+                    <!-- member-title -->
+                    <div class="member-title">
+                      <h4>Developer</h4>
+                    </div><!-- /member-title -->
+
+                    <!-- member-social -->
+                    <div class="member-social">
+                      <ul>
+                        <li>
+                          <a href="#" title="Twitter" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Facebook" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Google +" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-google-plus"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- /member-social -->
+
+                  </div><!-- /member-box -->
+                </div><!-- /member-box-wrapper -->
+
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+              <!-- col-md-3 col-sm-6 col-xs-12 -->
+              <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+                <!-- member-box-wrapper -->
+                <div class="member-box-wrapper" data-uk-scrollspy="{cls:'uk-animation-slide-right', delay:700}">
+                  <!-- member-box -->
+                  <div class="member-box">
+
+                    <!-- member-img -->
+                    <div class="member-img">
+                      <img src="/assets/images/team/4-290x290.jpg" alt="Member Image" />
+                    </div><!-- /member-img -->
+
+                    <!-- member-name -->
+                    <div class="member-name">
+                      <h2>Daryl Oliver</h2>
+                    </div><!-- /member-name -->
+
+                    <!-- member-title -->
+                    <div class="member-title">
+                      <h4>Marketing</h4>
+                    </div><!-- /member-title -->
+
+                    <!-- member-social -->
+                    <div class="member-social">
+                      <ul>
+                        <li>
+                          <a href="#" title="Twitter" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Facebook" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" title="Google +" data-placement="top" data-rel="tooltip">
+                            <i class="fa fa-google-plus"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- /member-social -->
+
+                  </div><!-- /member-box -->
+                </div><!-- /member-box-wrapper -->
+
+
+              </div><!-- /col-md-3 col-sm-6 col-xs-12 -->
+
+
+            </div><!-- /row -->
+          </div><!-- /container -->
+        </section><!-- /team-section -->
+
+
+
+
+        <!-- =========================================
+        Clients Section Wrapper
+        ========================================== -->
+        <!-- clients-section-wrapper -->
+        <section id="clients-section-wrapper">
+
+          <!-- clients-section-container -->
+          <div id="clients-section-container">
+
+            <!-- container -->
+            <div class="container">
+              <!-- row -->
+              <div class="row">
+
+
+                <!-- col-md-12 -->
+                <div class="col-md-12">
+
+                  <!-- cbp-qtrotator -->
+                  <div id="cbp-qtrotator" class="cbp-qtrotator">
+
+
+                    <!-- cbp-qtcontent -->
+                    <div class="cbp-qtcontent">
+
+                      <!-- Image -->
+                      <img src="/assets/images/clients/1-290x290.jpg" alt="img01" />
+
+                      <!-- blockquote -->
+                      <blockquote>
+                        <p>People eat meat and think they will become as strong as an ox, forgetting that the ox eats grass.</p>
+                        <footer>Client 1</footer>
+                      </blockquote><!-- /blockquote -->
+
+                    </div><!-- /cbp-qtcontent -->
+
+
+                    <!-- cbp-qtcontent -->
+                    <div class="cbp-qtcontent">
+
+                      <!-- Image -->
+                      <img src="/assets/images/clients/2-290x290.jpg" alt="img02" />
+
+                      <!-- blockquote -->
+                      <blockquote>
+                        <p>Nothing will benefit human health and increase the chances for survival of life on Earth as much as the evolution to a vegetarian diet.</p>
+                        <footer>Client 2</footer>
+                      </blockquote><!-- /blockquote -->
+
+                    </div><!-- /cbp-qtcontent -->
+
+
+                    <!-- cbp-qtcontent -->
+                    <div class="cbp-qtcontent">
+
+                      <!-- Image -->
+                      <img src="/assets/images/clients/3-290x290.jpg" alt="img03" />
+
+                      <!-- blockquote -->
+                      <blockquote>
+                        <p>If you don't want to be beaten, imprisoned, mutilated, killed then you shouldn't condone such behaviour towards anyone, be they human or not.</p>
+                        <footer>Client 3</footer>
+                      </blockquote><!-- /blockquote -->
+
+                    </div><!-- /cbp-qtcontent -->
+
+
+                    <!-- cbp-qtcontent -->
+                    <div class="cbp-qtcontent">
+
+                      <!-- Image -->
+                      <img src="/assets/images/clients/4-290x290.jpg" alt="img02" />
+
+                      <!-- blockquote -->
+                      <blockquote>
+                        <p>Nothing will benefit human health and increase the chances for survival of life on Earth as much as the evolution to a vegetarian diet.</p>
+                        <footer>Client 4</footer>
+                      </blockquote><!-- /blockquote -->
+
+                    </div><!-- /cbp-qtcontent -->
+
+                  </div><!-- /cbp-qtrotator -->
+
+                </div><!-- /col-md-12 -->
+
+
+              </div><!-- /row -->
+            </div><!-- /container -->
+
+          </div><!-- /clients-section-container -->
+
+        </section><!-- /clients-section -->
+
+
+
+
+        <!-- =========================================
+        Contact Us Section
+        ========================================== -->
+        <!-- contact-section -->
+        <section id="contact-section">
+          <!-- container -->
+          <div class="container">
+            <!-- row -->
+            <div class="row">
+
+              <!-- col-md-12 -->
+              <div class="col-md-12">
+
+                <!-- section-title -->
+                <div class="section-title" data-uk-scrollspy="{cls:'uk-animation-fade', delay:500}">
+                  <h1>Contact Us</h1>
+                </div><!-- /section-title -->
+
+                <!-- section-desc -->
+                <div class="section-desc" data-uk-scrollspy="{cls:'uk-animation-fade', delay:700}">
+                  <p>Submit a tip or just say hello, big or small, we've got a solution when you need it.</p>
+                </div><!-- /section-desc -->
+
+              </div><!-- /col-md-12 -->
+
+
+              <!-- form -->
+              <form role="form" id="form" class="contactForm" method="post" action="php/send.php">
+
+
+                <!-- col-md-6 -->
+                <div class="col-md-6">
+
+                  <!-- Contact Name -->
+                  <div class="form-group" data-uk-scrollspy="{cls:'uk-animation-slide-left', delay:500}">
+
+                    <div class="controls">
+                      <input type="text" class="form-control requiredField" placeholder="Your name" name="name">
+                    </div>
+
+                  </div><!-- /Contact Name -->
+
+
+
+                  <!-- Contact Mail -->
+                  <div class="form-group" data-uk-scrollspy="{cls:'uk-animation-slide-left', delay:500}">
+
+                    <div class="controls">
+                      <input type="email" class="form-control email requiredField" placeholder="Your email" name="email">
+                    </div>
+
+                  </div><!-- /Contact Mail -->
+
+
+                  <!-- Contact Subject -->
+                  <div class="form-group" data-uk-scrollspy="{cls:'uk-animation-slide-left', delay:500}">
+
+                    <div class="controls">
+                      <input type="text" class="form-control requiredField" placeholder="Subject" name="subject">
+                    </div>
+
+                  </div><!-- /Contact Subject -->
+
+                </div><!-- /col-md-6 -->
+
+
+                <!-- col-md-6 -->
+                <div class="col-md-6">
+
+                  <!-- Contact Message -->
+                  <div class="form-group" data-uk-scrollspy="{cls:'uk-animation-slide-right', delay:500}">
+
+                    <div class="controls">
+                      <textarea rows="10" class="form-control requiredField" placeholder="Your message" name="message"></textarea>
+                    </div>
+
+                  </div><!-- /Contact Message -->
+
+                  <!-- Submit Button -->
+                  <div  data-uk-scrollspy="{cls:'uk-animation-slide-right', delay:500}">
+                    <button type="submit" class="btn btn-lg btn-nesto submit">Submit</button>
+                  </div>
+
+                </div><!-- /col-md-6 -->
+
+
+              </form><!-- /form -->
+
+
+            </div><!-- /row -->
+          </div><!-- /container -->
+        </section><!-- /contact-section -->
+
+
+
+
+        <!-- =========================================
+        Map Section
+        ========================================== -->
+        <!-- map-section -->
+        <section id="map-section">
+
+          <!-- map -->
+          <div id="map"></div>
+
+          <!-- subscribe -->
+          <div id="subscribe" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:500}">
+
+            <!-- form -->
+            <form id="sform" method="post" action="php/news-letter.php">
+
+              <!-- Contact Mail -->
+              <div class="form-group">
+
+                <div class="controls">
+                  <input type="email" class="form-control email srequiredField" placeholder="Your email" name="semail">
+                </div>
+
+              </div><!-- /Contact Mail -->
+
+              <!-- Subscribe Button -->
+              <button type="submit" class="btn btn-lg btn-nesto submit">Subscribe</button>
+
+            </form><!-- /form -->
+
+          </div><!-- /subscribe -->
+
+        </section><!-- /map-section -->
+      <%end%>
+
+
+
+      <!-- =========================================
+      Footer Section
+      ========================================== -->
+      <!-- footer-section -->
+      <section id="footer-section">
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+
+
+            <!-- col-md-8 col-sm-6 -->
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p>Copyright &copy; 2014 <a href="http://example.com">example.com</a> All rights reserved!</p>
+            </div><!-- /col-md-8 col-sm-6 -->
+
+
+            <!-- col-md-4 col-sm-6 -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+              <!-- footer-social-icons -->
+              <div id="footer-social-icons">
+
+                <ul>
+                  <li>
+                    <!-- twitter -->
+                    <a href="#" title="Twitter" data-placement="top" data-rel="tooltip" class="twitter">
+                      <i class="fa fa-twitter"></i>
+                    </a><!-- /twitter -->
+                  </li>
+                  <li>
+                    <!-- facebook -->
+                    <a href="#" title="Facebook" data-placement="top" data-rel="tooltip" class="facebook">
+                      <i class="fa fa-facebook"></i>
+                    </a><!-- /facebook -->
+                  </li>
+                  <%if signed_in?%>
+                    <li>
+                      <!-- google-plus -->
+                      <a href="#" title="Google Plus" data-placement="top" data-rel="tooltip" class="google-plus">
+                        <i class="fa fa-google-plus"></i>
+                      </a><!-- /google-plus -->
+                    </li>
+                    <li>    
+                      <!-- youtube-play -->
+                      <a href="#" title="Youtube" data-placement="top" data-rel="tooltip" class="youtube-play">
+                        <i class="fa fa-youtube-play"></i>
+                      </a><!-- /youtube-play -->
+                    </li>
+                    <li>
+                      <!-- pinterest -->
+                      <a href="#" title="Pinterest" data-placement="top" data-rel="tooltip" class="pinterest">
+                        <i class="fa fa-pinterest"></i>
+                      </a><!-- /pinterest -->
+                    </li>
+                    <li>
+                      <!-- linkedin -->
+                      <a href="#" title="LinkedIn" data-placement="top" data-rel="tooltip" class="linkedin">
+                        <i class="fa fa-linkedin"></i>
+                      </a><!-- /linkedin -->
+                    </li>
+                    <li>
+                      <!-- skype -->
+                      <a href="#" title="Skype" data-placement="top" data-rel="tooltip" class="skype">
+                        <i class="fa fa-skype"></i>
+                      </a><!-- /skype -->
+                    </li>
+                    <li>
+                      <!-- instagram -->
+                      <a href="#" title="Instagram" data-placement="top" data-rel="tooltip" class="instagram">
+                        <i class="fa fa-instagram"></i>
+                      </a><!-- /instagram -->
+                    </li>
+                  <%end%>
+                </ul>
+
+              </div><!-- /footer-social-icons -->
+
+
+            </div><!-- /col-md-4 col-sm-6 -->
+
+
+          </div><!-- /row -->
+        </div><!-- /container -->
+      </section><!-- /section -->
+
+
+
+
+      <!-- =========================================
+      Portfolio Image Modal
+      ========================================== -->
+      <!-- modal -->
+      <div class="modal fade" id="portfolio-img-Modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+
+            <!-- modal-dialog -->
+            <div class="modal-dialog">
+              <!-- modal-content -->
+              <div class="modal-content">
+
+
+                <!-- modal-header -->
+                <div class="modal-header">
+                  <!-- X close -->
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <!-- modal-title -->
+                  <h3 class="modal-title">Portfolio Image Modal</h3>
+                </div><!-- /modal-header -->
+
+
+                <!-- modal-body -->
+                <div class="modal-body">
+
+                  <div class="thumbnail">
+                    <img src="/assets/images/portfolio/single-portfolio/thumbs/6-680x425.jpg" alt="Chess" />
+                  </div>
+
+                  <!-- project-OverView -->
+                  <div class="project-OverView">
+
+                    <!-- short-section-title -->
+                    <div class="short-section-title">
+                      <h3>OverView</h3>
+                    </div><!-- /short-section-title -->
+
+                    <p>Duis scelerisque ac nulla eu luctus. Donec consectetur ut erat non commodo. Nulla accumsan faucibus elit a fermentum. Praesent placerat dui cursus velit laoreet, eget euismod sapien pellentesque.</p>
+                    <p>Etiam ante mi, rutrum eget volutpat vitae, placerat ac lacus. Integer tincidunt leo sit amet enim tincidunt vulputate. Vestibulum ultricies ante ante, id accumsan magna tristique sit amet.</p>
+                    <p>Phasellus id dui tellus. Vestibulum magna eros, tempus sed quam ut, accumsan molestie dui. Nam eget lorem tristique, dictum nulla eu, dictum erat. Phasellus in pulvinar elit, quis luctus lacus. Fusce quis posuere felis.</p>
+                  </div><!-- /project-OverView -->
+
+
+                  <!-- project-details -->
+                  <div class="project-details">
+
+                    <!-- short-section-title -->
+                    <div class="short-section-title">
+                      <h3>Project Details</h3>
+                    </div><!-- /short-section-title -->
+
+                    <!-- project-desc -->
+                    <ul class="project-desc">
+                      <li><strong>Type : </strong>Logo</li>
+                      <li><strong>Client : </strong>Client Name</li>
+                      <li><strong>Skills : </strong>Html5, CSS3, jquery</li>
+                      <li><strong>Status : </strong>Finish on 7 March, 2014</li>
+                    </ul><!-- /project-detail -->
+
+                  </div><!-- /project-details -->
+
+                </div><!-- /modal-body -->
+
+
+                <!-- modal-footer -->
+                <div class="modal-footer">
+
+                  <!-- View Project button -->
+                  <a class="btn btn-nesto" href="#" title="View Project">
+                    View Project
+                  </a>
+
+                  <!-- close button -->
+                  <a class="btn btn-nesto" data-dismiss="modal" title="Close" href="#">
+                    Close
+                  </a>
+
+                </div><!-- modal-footer -->
+
+
+              </div><!-- /modal-content -->
+            </div><!-- /modal-dialog -->
+
+          </div><!-- /row -->
+        </div><!-- /container -->
+
+      </div><!-- /modal -->
+
+
+
+
+      <!-- =========================================
+      Portfolio Video Modal
+      ========================================== -->
+      <!-- modal -->
+      <div class="modal fade" id="portfolio-video-Modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+
+            <!-- modal-dialog -->
+            <div class="modal-dialog">
+              <!-- modal-content -->
+              <div class="modal-content">
+
+
+                <!-- modal-header -->
+                <div class="modal-header">
+                  <!-- X close -->
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <!-- modal-title -->
+                  <h3 class="modal-title">Portfolio Video Modal</h3>
+                </div><!-- /modal-header -->
+
+
+                <!-- modal-body -->
+                <div class="modal-body">
+
+                  <div class="thumbnail">
+                    <div class="fitvids">
+                      <iframe src="/assets///www.youtube.com/embed/rT_OmTMwvZI" width="500" height="281"></iframe>
+                    </div>
+                  </div>
+
+                  <!-- project-OverView -->
+                  <div class="project-OverView">
+
+                    <!-- short-section-title -->
+                    <div class="short-section-title">
+                      <h3>OverView</h3>
+                    </div><!-- /short-section-title -->
+
+                    <p>Duis scelerisque ac nulla eu luctus. Donec consectetur ut erat non commodo. Nulla accumsan faucibus elit a fermentum. Praesent placerat dui cursus velit laoreet, eget euismod sapien pellentesque.</p>
+                    <p>Etiam ante mi, rutrum eget volutpat vitae, placerat ac lacus. Integer tincidunt leo sit amet enim tincidunt vulputate. Vestibulum ultricies ante ante, id accumsan magna tristique sit amet.</p>
+                    <p>Phasellus id dui tellus. Vestibulum magna eros, tempus sed quam ut, accumsan molestie dui. Nam eget lorem tristique, dictum nulla eu, dictum erat. Phasellus in pulvinar elit, quis luctus lacus. Fusce quis posuere felis.</p>
+                  </div><!-- /project-OverView -->
+
+
+                  <!-- project-details -->
+                  <div class="project-details">
+
+                    <!-- short-section-title -->
+                    <div class="short-section-title">
+                      <h3>Project Details</h3>
+                    </div><!-- /short-section-title -->
+
+                    <!-- project-desc -->
+                    <ul class="project-desc">
+                      <li><strong>Type : </strong>Video</li>
+                      <li><strong>Client : </strong>Client Name</li>
+                      <li><strong>Skills : </strong>Maya, PhotoShop</li>
+                      <li><strong>Status : </strong>Finish on 7 March, 2014</li>
+                    </ul><!-- /project-detail -->
+
+                  </div><!-- /project-details -->
+
+                </div><!-- /modal-body -->
+
+
+                <!-- modal-footer -->
+                <div class="modal-footer">
+
+                  <!-- View Project button -->
+                  <a class="btn btn-nesto" href="#" title="View Project">
+                    View Project
+                  </a>
+
+                  <!-- close button -->
+                  <a class="btn btn-nesto" data-dismiss="modal" title="Close" href="#">
+                    Close
+                  </a>
+
+                </div><!-- modal-footer -->
+
+
+              </div><!-- /modal-content -->
+            </div><!-- /modal-dialog -->
+
+          </div><!-- /row -->
+        </div><!-- /container -->
+
+      </div><!-- /modal -->
+
+
+
+
+      <!-- =========================================
+      java script
+      ========================================== -->
+      <script src="/assets/http://maps.google.com/maps/api/js?sensor=true"></script>
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script type="text/javascript">
+        (function(b, o, i, l, e, r) {
+          b.GoogleAnalyticsObject = l;
+          b[l] || (b[l] =
+                  function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                  });
+          b[l].l = +new Date;
+          e = o.createElement(i);
+          r = o.getElementsByTagName(i)[0];
+          e.src = 'http://www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', '_trackPageview');
+        ga('send', 'pageview');
+      </script>
+
+
+
+
+    </body><!-- /body -->
+

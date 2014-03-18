@@ -1,0 +1,59 @@
+<div class="navbar navbar-fluid-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%=link_to @app.nil? ? t(:main_title) : @app.app_name, root_path, title: t(:main_title), :class=>"brand"%>
+      <div class="container-fluid nav-collapse">
+        <ul class="nav">
+          <li><%=link_to t(:home), root_path, title: t(:home)%></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=t(:my_account)%><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <%if signed_in?%>
+                <li>
+                  <%=link_to current_user, :title => t(".show_my_account") do %>
+                    <i class="icon-user"></i><span><%=t(".profile")%></span>
+                  <%end%>
+                </li>
+                <li>
+                  <%=link_to edit_user_path(current_user), :title => t(".edit_my_accout") do %>
+                    <i class="icon-cog"></i><span><%=t(".edit_my_accout")%></span>
+                  <%end%>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to destroy_session_path, title: t(:logout) + " " + current_user.username do %>
+                    <i class="icon-signout"></i><span><%= t(:logout) %></span>
+                  <%end%>
+                </li>
+              <%else%>
+                <li>
+                  <%= link_to new_user_session_path, title: t(:login) do %>
+                    <i class="icon-signin"></i><span><%=t(:login)%></span>
+                  <%end%>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to new_user_registration_path, title: t(:sign_up) do %>
+                    <i class="icon-user"></i><span><%= t(:sign_up) %></span>
+                  <%end%>
+                </li>
+              <%end%>
+            </ul>
+          </li>
+          <li style="float: right;">
+            <% if I18n.locale.to_s == "es"%>
+              <%= link_to image_tag("countries_flags/usa.gif", :title => t(".change_to_english"), :width => "30px"), :locale=>'en'%>
+            <% else %>
+              <%= link_to image_tag("countries_flags/mex.gif", :title => t(".change_to_spanish"), :width => "30px"), :locale=>'es'%>
+            <%end%>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

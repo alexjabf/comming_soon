@@ -1,0 +1,40 @@
+<%= form_tag destroy_multiple_roles_path, method: :delete, :id => "#{controller_name}-index" do %>
+  <table>
+    <thead>
+      <tr>
+        <%if can? :destroy, Role %>
+          <th><input id="select-all" type="checkbox"></input></th>
+          <%end%>
+        <th><%= t('layouts.application.actions') %></th>
+        <th><%= t'.id' %></th>
+        <th><%= t('.protected') %></th>
+        <th><%= t('.name') %></th>
+        <th><%= t('.description') %></th>      
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @roles.each do |role| %>
+        <% @model = role %>
+        <tr>
+          <%if can? :destroy, Role %>
+            <td><%= check_box_tag "roles[]", role.id, false, :class => 'check-all'%></td>
+          <%end%>
+          <td><%= render "partials/index_links" %></td>
+          <%if can? :show, Role %>
+            <td><%=link_to role.id, role, :class => "btn btn-xs btn-primary"%></td>
+          <%else%>
+            <td><%= label role.id, role.id, :class => "btn btn-xs btn-primary"%></td>
+          <%end%>
+          <td><%= t(role.protected.to_s) unless role.protected.nil? %></td>
+          <td><%= role.name %></td>
+          <td><%= role.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%if can? :destroy, Role %>
+    <%= button_tag t("actions.multiple_destroy.male", model: t("activerecord.models.#{controller_name}").downcase), data: { confirm: t("layouts.application.are_you_sure_multiple_destroy.male", model: t("activerecord.models.#{controller_name}").downcase) }, :title => t("actions.multiple_destroy.male",  model: t("activerecord.models.#{controller_name}").downcase), :class => "btn btn-xs btn-danger", :id => "delete-selected-button" %>
+  <%end%>
+<%end%>
+

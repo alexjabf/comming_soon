@@ -1,0 +1,31 @@
+es:
+  users:
+    show:
+      id: 'Id: '
+      first_name: 'Nombre(S): '
+      last_name: 'Apellido(S): '
+      role_id: 'Rol: '
+      active: 'Activo: '
+      created_at: 'Registrado El: '
+      updated_at: 'Actualizado El: '
+    index:
+      id: 'Id'
+      first_name: 'Nombre(S)'
+      last_name: 'Apellido(S)'
+      role_id: 'Rol'
+      active: 'Activo'
+      created_at: 'Registrado El'
+      updated_at: 'Actualizado El'
+  activerecord:
+    models:
+      user: 'Usuario'
+      users: 'Usuarios'
+    attributes:
+      user:
+        id: 'Id: '
+        first_name: 'Nombre(S): '
+        last_name: 'Apellido(S): '
+        role_id: 'Rol: '
+        active: 'Activo: '
+        created_at: 'Registrado El: '
+        updated_at: 'Actualizado El: '

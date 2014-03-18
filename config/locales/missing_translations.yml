@@ -1,0 +1,317 @@
+---
+es:
+  messages:
+    errors:
+      must_specify_foreign_key: Debe espesificar una llave foranea.
+      must_specify_custom_action_name: Debe espesificar una accion.
+      permissions_already_exist: El permiso seleccionado ya existe.
+    validators:
+      ip_address: Ip Address
+      zip: Zip
+      global: Global
+      scaffold_name_taken: El nombre introducido para el catalogo ya ha sido utilizado.
+      reserved_name: El nombre introducido para el catalogo es un nombre reservado.
+      availible: Disponible
+      wrong_format_scaffold_name: Formato incorrecto, solo se permiten letras, numeros,
+        guion bajo [ _ ], debe empezar y terminar con letra o numero y tener de 2
+        a 64 caracteres.
+  layouts:
+    application:
+      text_field: Campo de Texto
+      text_area: Area de Texto
+      password_field: Campo de Password
+      email_field: Campo de Correo Electronico
+      url_field: Campo de URL
+      search_field: Campo de Búsqueda
+      color_field: Color Field
+      hidden_field: Campo Oculto
+      select: Seleccionador
+      number_field: Campo de Número
+      phone_field: Campo de Teléfono
+      telephone_field: Campo de Teléfono (2)
+      check_box: Casilla de Verificación
+      radio_button: Botón de Radio
+      file_field: Seleccionador de Archivo
+      field_set: Field Set
+      image_submit: Imagen
+      datetime_local_select: Seleccionador de Fecha y Hora Local
+      date_select: Seleccionador de Fecha
+      datetime_select: Seleccionador de Fecha y Hora
+      month_select: Seleccionador de Mes
+      week_select: Seleccionador de Semana
+      time_select: Seleccionador de Tiempo
+      range_field: Campo de Rango
+      utf8_enforcer: Utf8 Enforcer
+      normal_display: Normal
+      color_display: Color
+      encrypted_display: Encriptada
+      image_display: Imagén
+      text_display: Texto
+      search_display: Búsqueda
+      text_area_display: Area de Texto
+      number_display: Número
+      percentage_display: Porcentaje
+      big_number_display: Número Grande
+      currency_display: Moneda
+      address_display: Dirección
+      phone_display: Teléfono
+      email_display: Correo Electrónico
+      link_display: Enlace
+      url_display: Página Web
+      date_display: Fecha
+      datetime_display: Fecha y Hora
+      time_display: Tiempo
+      boolean_display: Booleano
+      menu: Menu
+      model: Modelo
+      referenced_column: Columna Referenciada
+      tools: Herramientas
+      actions: Acciones
+      form_reset: Resetear Forma
+      number_of_records: Número de Registros
+      global_validation: Global
+      number: Número
+      address: Dirección
+      phone: Teléfono
+      link: Enlace
+      url: Página Web
+      date: Fecha
+      datetime: Fecha y Hora
+      timestamp: Estampa de Tempo
+      text: Texto
+      name: Nombre
+      username: Nombre de Usuario
+      login: Login
+      zip: Código Postal
+      price: Precio
+      email: Correo Electrónico
+      password: Contraseña
+      time: Hora
+      boolean: Boleano
+      male: Masculino
+      female: Femenino
+      decimal: Decimal/Moneda
+      ip_address: Ip Address
+      search: Búsqueda
+      has_one: Has One
+      has_many: Has Many
+      has_and_belongs_to_many: Has And Belongs To Many
+      development_tools: Development Tools
+      return_to_my_application: Return To My Application
+      erd: Erd
+    devise:
+      enter_email: Introduzca su correo electrónico.
+      enter_login: Introduzca su correo electrónico o nombre de usuario.
+      enter_password: Introduzca su contraseña.
+      enter_new_password: Introduzca su nueva contraseña.
+      required_if_new_password: Obligatorio si hay cambio de contraseña
+      enter_new_password_confirmation: Introduzca la confirmación de su nueva contraseña.
+      current_password: Introduzca su contraseña actual para confirmar sus cambios.
+      leave_password_blank: Deje la contraseña en blanco si no desea cambiarla
+      leave_same_username: Dejar el mismo nombre de usuario
+      enter_new_username: Ingresar nuevo nombre de usuario
+  partials:
+    navbar:
+      change_to_english: Change To English
+      show_my_account: Mostrat Mi Cuenta
+      profile: Mi Perfil
+      edit_my_accout: Editar Mi Cuenta
+    search_options:
+      advanced_search: Búsqueda Avanzada
+      quick_search: Búsqueda Rapida
+      search_critaria: Criterios de Búsqueda
+      select_page_numbers: Mostrar
+      order_by: Ordenar Por
+      asc: Asc
+      desc: Desc
+      sort_by: Asc/Desc
+      all_records: Todos
+      search_options: Opciones de Búsqueda
+      like: Contiene
+      equal: Exacta
+      search_by: Tipo de Búsqueda
+      and: Y
+      or: O
+      search_by_or_and: Buscar Por
+      from: Desde
+      to: Hasta
+    modals:
+      please_wait: Porfavor espere......
+      current_progress: Progreso Actual
+      finish: Terminar
+    sidebar:
+      index1: Página de Prueba A
+      index2: Página de Prueba B
+      index3: Página de Prueba C
+      index4: Página de Template de Prueba
+    default_navbar:
+      profile: Profile
+    custom_scaffolds_navbar:
+      show_my_account: Show My Account
+      profile: Profile
+      edit_my_accout: Edit My Accout
+      change_to_english: Change To English
+  my_account: Mi Cuenta
+  actions:
+    sending_email: Enviando Correo Electrónico......
+    changing_password: Cambiando Contraseña......
+    cropping_image: Recortando Imagen
+    going_back: Regresando a Página Anterior
+    returning: Regresando a %{model}
+    creating: Espere......
+    deleting: Eliminando %{model}
+    generate_random_data: Generar Datos Aleatórios Para %{model}
+    index: Indice de %{model}
+    column_added: Columna Agregada
+    generating_random_data: Generando Datos Aleatórios Para %{model}......
+    generate: Generar
+    go_to_url: 'Visitar url: %{url}'
+    send_email_to: 'Enviar correoa: %{mail}'
+    add_column: Agregar Columna
+    add_reference_column: Agregar Columna Referenciada
+    random_data_created:
+      male: Male
+  custom_scaffolds:
+    index:
+      i18n_scaffold_name: I18n del Nombre del Catalogo
+      i18n_id: I18n de Id
+      i18n_created_at: I18n de Created At
+      i18n_updated_at: I18n de Updated At
+      index_id: Mostrar Id en el Indice
+      show_id: Mostrar Id en Detalles
+      is_nested_model: Is Nested Model
+      model_to_nest: Model To Nest
+      app_name: App Name
+      user_id: User Id
+      app_id: App Id
+      system_scaffold: System Scaffold
+      protected: Protected
+    show:
+      i18n_scaffold_name: I18n Scaffold Name
+      i18n_id: I18n Id
+      i18n_created_at: I18n Created At
+      i18n_updated_at: I18n Updated At
+      index_id: Index Id
+      show_id: Show Id
+      custom_scaffold_id: Custom Scaffold Id
+      column_name: Column Name
+      column_type: Column Type
+      is_readonly: Is Read Only
+      column_position: Column Position
+      column_description: Column Description
+      default_value: Default Value
+      is_required: Is Required
+      is_unique: Is Unique
+      validates_with_scope: Validates With Scope
+      select_display: Select Display
+      select_value: Select Value
+      min_length: Min Length
+      max_length: Max Length
+      index_display: Index Display
+      show_display: Show Display
+      index_display_format: Index Display Format
+      show_display_format: Show Display Format
+      css_class: Custom Class
+      custom: Custom
+      placeholder: Placeholder
+      title: Title
+      validation_type: Validation Type
+      scope_validation: Scope Validation
+      is_nested_model: Is Nested Model
+      model_to_nest: Model To Nest
+    current_element: Current Element
+    tools:
+      rebuild_app: Re-construir Aplicación
+      add_column: Agregar Columna
+    notices:
+      app_has_been_rebuilded: La aplicación ha sido re-construida exitosamente.
+    errors:
+      app_could_not_been_rebuilded: Un error inesperado ha ocurrido y la apicación
+        no pudo ser re-construida.
+    create_custom_scaffold: Crear Catalogo Personalizado
+  column_attributes:
+    show:
+      string: Cadena de Texto
+      references: Referencia (Llave Foranea)
+      text: Texto
+      boolean: Booleano
+      integer: Entero
+      float: Flotante
+      decimal: Decimal
+      date: Fecha
+      datetime: Fecha y Hora
+      time: Tiempo
+      timestamp: Estampa de Tiempo
+      binary: Binario
+      primary_key: Llave Primaria
+      field_type: Tipo de Entrada
+      field_size: Tamaño de Entrada
+      select_autocomplete: Seleccionar Para Autocompletado
+      is_searchable: Disponible Para Búsqueda
+      column_template: Columna Predefinida
+      search: Buscar
+      current_controller: Controlador Actual
+      hstore: Hstore
+      array: Array
+      cidr_address: Cidr Address
+      ip_address: Ip Address
+      mac_address: Mac Address
+      options_for_select: Options For Select
+    index:
+      field_type: Tipo de Entrada
+      field_size: Tamaño de Entrada
+      select_autocomplete: Seleccionar Para Autocompletado
+      is_searchable: Disponible Para Búsqueda
+      custom: Perzonalizar
+      column_template: Columna Predefinida
+      options_for_select: Options For Select
+  permissions:
+    index:
+      user_association: User Association
+  users:
+    index:
+      current_password: Current Password
+  activerecord:
+    models:
+      templates: Templates
+      template: Template
+      development_tools: Development Tools
+  apps:
+    index:
+      created_at: Create!D At
+      create!d_at: Create!D At
+  es:
+    users:
+      id: Id
+      first_name: First Name
+      last_name: Last Name
+      username: Username
+      email: Email
+      active: Active
+      role_id: Role Id
+      created_at: Created At
+      updated_at: Updated At
+  welcome:
+    signed_in_welcome:
+      account_id: Account Id
+      app_name: App Name
+      custom_scaffolds_number: Custom Scaffolds Number
+      app_status: App Status
+      cost: Cost
+      app_template_id: App Template Id
+      created_at: Created At
+      updated_at: Updated At
+  app_templates:
+    index:
+      rails: Rails
+      bootstrap: Bootstrap
+      foundation: Foundation
+      wordpress: Wordpress
+      skeleton: Skeleton
+      boilerplate: Boilerplate
+      kickstart: Kickstart
+      montage: Montage
+      sproutcore: Sproutcore
+      zebra: Zebra
+      less: Less
+      createjs: Createjs

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails To Go : " + t("activerecord.models.#{controller_name}")%></title>
+    <%= stylesheet_link_tag "development_templete/application", :media => "all" %>
+    <%= render "partials/javascript" %>  
+    <%= javascript_include_tag "development_templete/application", "#{session[:faye_url]}.js" %>
+    <%= csrf_meta_tags %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+
+  <body>
+    <%= render "partials/custom_scaffolds_navbar" %>
+    <div class="container-fluid">
+      <%= bootstrap_flash %>
+      <div class="row-fluid">
+
+        <div class="span3">
+          <div class="list-group">
+            <%= render "partials/custom_scaffolds_sidebar" %>
+          </div>
+        </div>
+
+        <div class="span9">
+          <h3 id="main-title"><%= t("activerecord.models.#{controller_name.pluralize}") %></h3>
+          <noscript>
+          <%#unless controller_name == "welcome" and action_name == "warnings"%>
+            <!--meta http-equiv="refresh" content="0; url=http://localhost:3000/welcome/warnings" /-->
+          <%#end%>
+          <p>Please enable JavaScript in your browser to continue.</p>
+          </noscript>
+          <%= render "partials/custom_scaffolds_search_options" if show_quick_search_form? %>
+<%# if has_custom_scaffold %>
+<%#= render "partials/#{@view_type}" %>
+<%# else %>
+          <div class="yield">
+            <%= yield %>
+          </div>
+<%# end %>
+          <%= render "partials/custom_scaffolds_action_links" if show_action_links? %>
+          <%if action_name == "create" or action_name == "update"%>
+            <script type="text/javascript">
+              $(function() {
+                $(".field_with_errors").children("select, textarea, input:not(.other)").css({border: "1px solid #FF0000"});
+                $(".field_with_errors").children("input[type='checkbox'], input[type='radio']").css({outline: "1px solid #FF0000"});
+                $(".field_with_errors").each(function() {
+                  $(this).after($(this).html());
+                });
+                $(".field_with_errors").remove();
+              });
+            </script>
+          <%end%>
+        </div>
+
+      </div>
+      <%= debug(params) if Rails.env.development? or Rails.env.local?%>
+      <footer>
+        <p>&copy; Rails To Go 2014</p>
+      </footer>
+
+    </div> 
+    <%= render "partials/custom_scaffolds_modals" %>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<%= form_tag users_path, :method => "get", :id => "advanced-search-form"  do %>
+<div class="modal-body" >
+  <div  id="search-options" class="full-width">
+    <%= select_tag(:search_by_or_and, options_for_select([[t("partials.search_options.or"), "OR"], [t("partials.search_options.and"), "AND"]], params[:search_by_or_and]), {:prompt => t('partials.search_options.search_by_or_and'), :style =>"margin-bottom: -5px; width: auto;", :style =>"width: auto;"})%>
+    <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :style =>"margin-bottom: -5px; width: auto;", :style =>"width: auto;"})%>           
+    <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :style =>"width: auto;"})%> 
+    <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :style =>"margin-bottom: -5px; width: auto;", :style =>"width: auto;"})%>   
+    <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :style =>"width: auto;"})%>    
+    <%= hidden_field_tag :controller_name, :controller_name, :value => controller_name, :read_only => true %>
+  </div>
+  <div id="form-fields">
+    <div class="left-custom-column">
+      
+        
+        <div class="field">
+          <%= t("#{controller_name}.show.id") %>
+          
+            
+              <br><%= number_field_tag :id, params[:id], :i18n_name => t('users.index.id'), :minlength => 1, :maxlength => 255, :style => 'width: 40px;', :validation_type => 'number',   :placeholder =>  t('layouts.application.not_required'), :title => t('users.index.id') %>
+            
+          
+        </div>
+      
+        
+        <div class="field">
+          <%= t("#{controller_name}.show.first_name") %>
+          
+            
+              <br><%= text_field_tag :first_name, params[:first_name], :i18n_name => t('users.index.first_name'), :minlength => 1, :maxlength => 30, :style => 'width: 400px;', :validation_type => 'name',   :placeholder =>  t('layouts.application.not_required'), :title => t('users.index.first_name') %>
+            
+          
+        </div>
+      
+        
+        <div class="field">
+          <%= t("#{controller_name}.show.last_name") %>
+          
+            
+              <br><%= text_field_tag :last_name, params[:last_name], :i18n_name => t('users.index.last_name'), :minlength => 1, :maxlength => 30, :style => 'width: 400px;', :validation_type => 'name',   :placeholder =>  t('layouts.application.not_required'), :title => t('users.index.last_name') %>
+            
+          
+        </div>
+      
+    </div>
+    <div class="right-custom-column">
+      
+        
+        <div class="field">
+          <%= t("#{controller_name}.show.role_id") %>
+          
+            <br><%= collection_select(nil, :role_id, @roles_select, :id, :select_display, {:include_blank => false, :prompt => true} ,{:i18n_name => t('users.index.role_id'), :minlength => 1, :maxlength => 5, :style => 'width: 400px;', :validation_type => 'number',   :placeholder =>  t('layouts.application.not_required'), :title => t('users.index.role_id')}) %>  
+          
+        </div>
+      
+        
+        <div class="field">
+          <%= t("#{controller_name}.show.active") %>
+          
+            
+              <br><%= check_box_tag :active, params[:active], :i18n_name => t('users.index.active'), :minlength => 1, :maxlength => 5,  :validation_type => 'boolean',   :placeholder =>  t('layouts.application.not_required'), :title => t('users.index.active') %>
+            
+          
+        </div>
+      
+    </div>
+  </div>
+  <div  id="form-date-fields" class="full-width">
+    <div class="field">
+      <%= label_tag t("#{controller_name}.show.created_at") %><br>
+      <div class="input-append date datepicker">
+        <%= select :created_at_from_date, nil, :value => params[:created_at_from_date], :placeholder => t("partials.search_options.from"), :readonly => false, :size=>"16"%><span class="add-on"><i class="icon-th"></i></span>
+      </div>
+      <div class="input-append date datepicker">
+        <%= select :created_at_to_date, nil, :value => params[:created_at_to_date], :placeholder => t("partials.search_options.to"), :readonly => false, :size=>"16"%><span class="add-on"><i class="icon-th"></i></span>
+      </div>
+    </div>
+    <div class="field">
+      <%= label_tag t("#{controller_name}.show.updated_at") %><br>
+      <div class="input-append date datepicker">
+        <%= select :updated_at_from_date, nil, :value => params[:updated_at_from_date], :placeholder => t("partials.search_options.from"), :readonly => false, :size=>"16"%><span class="add-on"><i class="icon-th"></i></span>
+      </div>
+      <div class="input-append date datepicker">
+        <%= select :updated_at_to_date, nil, :value => params[:updated_at_to_date], :placeholder => t("partials.search_options.to"), :readonly => false, :size=>"16"%><span class="add-on"><i class="icon-th"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <%=link_to  "#", :title => t("layouts.application.form_reset"), :onclick => "formReset($('#advanced-search-form'));", :class => 'btn btn-sm btn-default' do%>
+  <i class="icon-refresh"></i>
+  <%end%>
+  <button type="button" class="btn btn-default" data-dismiss="modal"><%=t(:cancel)%></button>
+  <%= submit_tag t("actions.search",  model: t("activerecord.models.#{controller_name}").titlecase), data: {disable_with: t("actions.searching",  model: t("activerecord.models.#{controller_name}").titlecase)}, :class => "btn btn-sm btn-primary" %> 
+  <% end %>
+</div>

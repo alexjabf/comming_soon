@@ -1,0 +1,762 @@
+en:
+  "true": "Yes"
+  "false": "No"
+  home: "Home"
+  go_back: "Go Back"
+  cancel: "Cancel"
+  logout : "Log Out "
+  login: "Log In"
+  password: "Password"
+  password_confirmation: "Password Confirmation"
+  send: "Send"
+  sign_up: "Sign Up"
+  welcome: "Welcome"
+  edit_my_account: "Edit My Account"
+  are_you_sure?: "Are you sure yo want to delete this %{model}?"
+  main_title: "Rails To Go"
+  avatar:
+    crop_image: "Crop the uploaded image"
+    crop_submit: "Update Image"
+    destroy: "Delete avatar"
+    destroy_sure: "Are you sure you wan't to delete the selected avatar?"
+    error:
+      no_file: "You have to select a file"
+      no_image_file: "The file you uploaded isn't valid, it must be an image file"
+      no_width: "The selection must not be empty"
+    list: "You have these avatars"
+    new: "Create a new avatar"
+    new_short: "New avatar"
+    no_avatars: "You haven't any avatar, plesase create a new one."
+    one: "Avatar"
+    other: "Avatars"
+    original: "Original image"
+    preview: "Preview"
+    profile_change: "Change your avatar"
+    set_default: "Set as default"
+    set_default_sure: "Are you sure you wan't to set this avatar as default?"
+    text:
+      new: "... or upload a new one"
+      use: "Use your saved avatars ..."
+    upload: "Upload"  
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%A, %B %d, %Y at %I:%M %p'
+      long_no_time: ! '%A, %B %d, %Y'
+      short: ! '%d de %b'        
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - Octover
+    - November
+    - December  
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hour
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than 1 minute
+        other: less than %{count} minute
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: more than 1 year
+        other: more than %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be acepted
+      blank: can not be blank
+      confirmation: does not match the confirmation
+      empty: can not be empty
+      equal_to: must equal to %{count}
+      even: must be an even number
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater or equal to %{count}
+      inclusion: is not included in the list
+      invalid: it is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be an odd number
+      record_invalid: ! 'The validation failure: %{errors}'
+      taken: it have been already taken
+      too_long:
+        one: es demasiado largo (máximo 1 caracter)
+        other: es demasiado largo (máximo %{count} caracteres)
+      too_short:
+        one: is too long (minimum 1 character)
+        other: is too short (mínimo %{count} character)
+      wrong_length:
+        one: longitud errónea (debe ser de 1 caracter)
+        other: longitud errónea (debe ser de %{count} caracteres)
+    template:
+      body: ! 'Check that the following fields are valid:'
+      header:
+        one: ! '%{model} can not save due to 1 error'
+        other: ! '%{model} can not be saved due to %{count} errors'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 2
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: thousand million
+          million: million
+          quadrillion: thousand billion
+          thousand: thousand
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ! ','
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ! ','
+    precision:
+      format:
+        delimiter: ! ','
+  support:
+    array:
+      last_word_connector: ! ' y '
+      two_words_connector: ! ' y '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %b %d, %Y at %H:%M:%S %Z'
+      long: ! '%A, %B %d, %Y at %I:%M %p'
+      short: ! '%b %d at %H:%M hrs'
+      hour: ! "%H:%M hrs"        
+    pm: pm
+  actions:
+    add: "Add %{model}"
+    remove: "Remove %{model}"
+    show: "Show %{model}"
+    edit: "Edit %{model}"
+    destroy: "Delete %{model}"
+    new:  "Create %{model}"
+    search:  "Search %{model}"       
+    searching:  "Searching %{model}......"      
+    newing:  "Creating %{model}......"
+    createing:  "Creating %{model}......"    
+    editing:  "Creating %{model}......"
+    updateing:  "Updating %{model}......"
+    destroying:  "Deleting Selected %{model}......"
+    loging_in: "Loging In......"
+    created: 
+      male: "The %{model}  was successfully created."
+      female: "The %{model}  was successfully created."
+    updated: 
+      male: "The %{model}  was successfully updated."
+      female: "The %{model}  was successfully updated."
+    destroyed: 
+      male: "The %{model}  was successfully deleted."
+      female: "The %{model}  was successfully deleted."
+    multiple_destroy:
+      male: "Delete selected %{model}"
+      female: "Delete selected %{model}"      
+    multiple_destroyed:
+      male: "The %{model} were successfully deleted."
+      female: "The %{model} were successfully deleted."      
+    return_to:  "Return to %{model}"
+
+  layouts:
+    application:
+      filter: Filter %{model}      
+      wrong_format: Wrong Format
+      required: "Required"
+      not_required: "Optional"    
+      all_records: All Records
+      show_all_items: Show All Items
+      not_match_found_for: Not Match Found For      
+      are_you_sure_multiple_destroy:
+        male: ¿Are you sure you want to delete selected %{model}?
+        female: ¿Are you sure you want to delete selected %{model}?   
+        
+  messages:
+    error:
+      you_must_select_at_least_one: 
+        male: You must select at least one %{model}.        
+        female: You must select at least one %{model}.
+    validators:
+      global_validation: ": Wrong format."
+      address: ": Wrong format."
+      names: ": Wrong format."
+      number: ": Wrong format."
+      decimal: ": Wrong format."
+      email: ": Wrong format."
+      url: ": Wrong format."
+      login: ": Wrong format."
+      password: ": Wrong format."
+      other: ": Wrong format."
+      scaffold: ": Wrong format."
+      phone: ": Wrong telephone number."
+      username: ": Wrong format."
+      min_length: ": minimun characters."
+      max_length: ": maximun characters."
+      date: ": Wrong format."
+      text: ": Wrong format."
+      boolean: ": Wrong format."
+      currency: ": Wrong format."
+      price: ": Wrong format."
+      
+  devise:
+    sessions:
+      new:
+        fullname: "Full Name: "
+        first_name: "Name(s): "
+        last_name: "Last Name: "
+        phone1: "Phone: "
+        cellphone: "Mobile: "
+        address1: "Address 1: "
+        address2: "Address 2: "
+        city: "City: "
+        state: "State: "
+        zip: "Zip: "
+        country: "Country: "
+        role_id: "Rol: "
+        active: "Active: "
+        username: "Username: "
+        login: "E-mail or Username: "        
+        email: "E-mail: "
+        password: "Password: "
+        password_confirmation: "Password Confirmation: "
+        created_at: "Created At: "
+        updated_at: "Updated At: "
+        last_sign_in_at: "Last Sign In At: "
+        login: "Log In"    
+    registrations:
+      new:
+        fullname: "Full Name: "
+        first_name: "Name(s): "
+        last_name: "Last Name: "
+        phone1: "Phone: "
+        cellphone: "Mobile: "
+        address1: "Address 1: "
+        address2: "Address 2: "
+        city: "City: "
+        state: "State: "
+        zip: "Zip: "
+        country: "Country: "
+        role_id: "Rol: "
+        active: "Active: "
+        username: "Username: "
+        email: "E-mail: "
+        password: "Password: "
+        password_confirmation: "Password Confirmation: "
+        created_at: "Created At: "
+        updated_at: "Updated At: "
+        last_sign_in_at: "Last Sign In At: " 
+    confirmations:
+      resend: "Resend confirmation instructions"
+    links:
+      sign_in: "Sign In"
+      sign_up: "Sign Up"      
+      forgot_pwd: "Forgot your password?"
+      conf_inst: "Didn't receive confirmation instructions?"
+      unlock_inst: "Didn't receive unlock instructions?"
+      access_links: "Need help to access your account?"         
+    mailer:
+      confirm:
+        conf_legend: "You can confirm your account email through the link below:"
+        usr&pwd: "Your username and password are: "
+        conf_account: "Confirm your account"
+      reset:
+    passwords:
+      mail:
+        message: "Someone has changed your password, if you did not do this change please click on the following link which will be available 24 hours after receipt of this email: "
+        message_two: "Otherwise ignore this mail."
+        token_expired: 'If the token to reset your password has expired, please click on the following link:'
+        subject: "Your password has changed"
+      change_your_password: "Change Your Password"
+      new: "New password"
+      confirm: "Confirm new password"
+      change_my: "Change my password"
+      forgot: "Forgot your password?"
+      send_reset_inst: "Send me reset password instructions"
+      requested: "Someone has requested a link to change your password, and you can do this through the link below."
+      ignore: "If you didn't request this, please ignore this e-mail."
+      wont_change: "Your password won't change until you access the link above and create a new one."
+    unlock:
+      has_been_locked: "Your account has been locked due to an excessive amount of unsuccessful sign in Attempts."
+      click_link: "Click the link below to unlock your account:"
+      account: "Unlock my account"
+      resend: "Resend unlock instructions"
+      email: "E-mail"     
+      
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "No %{model} found"
+        one:   "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+      
+  roles:
+    show:
+      id: "Id: "      
+      name: "Name: "
+      protected: "Protected: "
+      description: "Description: "
+      superadmin: "Super Administrator: "
+      administrator: "Administrator: "
+      guess: "Guess: "        
+      created_at: "Created At: "
+      updated_at: "Updated At: "
+    index:
+      id: "Id "      
+      name: "Name"
+      protected: "Protected"
+      description: "Description"
+      superadmin: "Super Administrator"
+      administrator: "Administrator"
+      guess: "Guess" 
+      created_at: "Created At"
+      updated_at: "Updated At"    
+  users:
+    edit_my_account: "Edit My Account"
+    editing_user: "Edit User"  
+    add_user: "Add User"    
+    cancel: "Cancel"   
+    change_avatar: "Update Image: "
+    show:
+      id: "Id: "      
+      fullname: "Full Name: "
+      first_name: "Name(s): "
+      last_name: "Last Name: "
+      phone1: "Phone: "
+      cellphone: "Mobile: "
+      address1: "Address 1: "
+      cellphone: "Address 2: "
+      fulladdress: "Full Address: "
+      city: "City: "
+      state: "State: "
+      zip: "Zip: "
+      country: "Country: "
+      role_id: "Rol: "
+      active: "Active: "
+      username: "Username: "
+      email: "E-mail: "
+      password: "Password: "
+      password_confirmation: "Password Confirmation: "
+      created_at: "Created At: "
+      updated_at: "Updated At: "
+      last_sign_in_at: "Last Sign In At: " 
+    index:
+      id: "Id "      
+      fullname: "Full Name"
+      first_name: "Name(s)"
+      last_name: "Last Name"
+      phone1: "Phone"
+      cellphone: "Mobile"
+      address1: "Address 1"
+      address2: "Address 2"
+      fulladdress: "Full Address"
+      city: "City"
+      state: "State"
+      zip: "Zip"
+      country: "Country"
+      role_id: "Rol"
+      active: "Active"
+      username: "Username"
+      email: "E-mail"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      created_at: "Created At"
+      updated_at: "Updated At"
+      last_sign_in_at: "Last Sign In At"
+  custom_scaffolds:
+    show:
+      id: 'Id: '
+      scaffold_name: 'Scaffold Name: '
+      i18_scaffold_name: 'i18n_8Scaffold Name: '        
+      columns_number: 'Columns Number: '
+      index_created_at: 'Index Created At: '
+      index_updated_at: 'Index Updated At: '
+      show_created_at: 'Show Created At: '
+      show_updated_at: 'Show Updated At: '
+      require_authentication: 'Require Authentication: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      scaffold_name: 'Scaffold Name'
+      i18_scaffold_name: 'i18n_8Scaffold Name'        
+      columns_number: 'Columns Number'
+      index_created_at: 'Index Created At'
+      index_updated_at: 'Index Updated At'
+      show_created_at: 'Show Created At'
+      show_updated_at: 'Show Updated At'
+      require_authentication: 'Require Authentication'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  column_attributes:
+    show:
+      id: 'Id: '
+      custom_scaffold_id: 'Custom Scaffold: '
+      column_name: 'Column Name: '
+      i18n_column_name: 'i18n Column Name: '      
+      column_type: 'Column Type: '
+      is_readonly: 'Is Read Only: '
+      column_position: 'Column Position: '
+      column_description: 'Column Description: '
+      default_value: 'Default Value: '
+      is_required: 'Is Required: '
+      is_unique: 'Is Unique: '
+      validates_with_scope: 'Validates With Scope: '
+      select_display: 'Select Display: '
+      select_value: 'Select Value: '
+      min_length: 'Min Length: '
+      max_length: 'Max Length: '
+      scale_value: 'Scale Value: '
+      index_display: 'Index Display: '
+      show_display: 'Show Display: '
+      index_display_format: 'Index Display Format: '
+      index_display_format_option: 'Index Display Format Option: '
+      show_display_format: 'Show Display Format: '
+      show_display_format_option: 'Show Display Format Option: '
+      css_class: 'Custom Class: '
+      css_id: 'Custom: '
+      placeholder: 'Placeholder: '
+      title: 'Title: '
+      validation_type: 'Validation Type: '
+      scope_validation: 'Scope Validation: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      custom_scaffold_id: 'Custom Scaffold'
+      column_name: 'Column Name'
+      i18n_column_name: 'i18n Column Name'
+      column_type: 'Column Type'
+      is_readonly: 'Is Read Only'
+      column_position: 'Column Position'
+      column_description: 'Column Description'
+      default_value: 'Default Value'
+      is_required: 'Is Required'
+      is_unique: 'Is Unique'
+      validates_with_scope: 'Validates With Scope'
+      select_display: 'Select Display'
+      select_value: 'Select Value'
+      min_length: 'Min Length'
+      max_length: 'Max Length'
+      scale_value: 'Scale Value'
+      index_display: 'Index Display'
+      show_display: 'Show Display'
+      index_display_format: 'Index Display Format'
+      index_display_format_option: 'Index Display Format Option'
+      show_display_format: 'Show Display Format'
+      show_display_format_option: 'Show Display Format Option'
+      css_class: 'Custom Class'
+      css_id: 'Custom'
+      placeholder: 'Placeholder'
+      title: 'Title'
+      validation_type: 'Validation Type'
+      scope_validation: 'Scope Validation'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  permissions:
+    show:
+      id: 'Id: '
+      role_id: 'Role: '
+      model: 'Model: '
+      protected: 'Protected: '
+      private: 'Private: '
+      private_key: 'Private Key: '
+      foreign_key: 'Foreign Key: '
+      custom_action: 'Custom Action: '
+      custom_action_name: 'Custom Action Name: '
+      has_new: 'Has New: '
+      has_edit: 'Has Edit: '
+      has_show: 'Has Show: '
+      has_destroy: 'Has Destroy: '
+      has_index: 'Has Index: '
+      description: 'Description: '
+      created_at: 'Created At: '
+      updated_at: 'Updated At: '
+    index:
+      id: 'Id'
+      role_id: 'Role'
+      model: 'Model'
+      protected: 'Protected'
+      private: 'Private'
+      private_key: 'Private Key'
+      foreign_key: 'Foreign Key'
+      custom_action: 'Custom Action'
+      custom_action_name: 'Custom Action Name'
+      has_new: 'Has New'
+      has_edit: 'Has Edit'
+      has_show: 'Has Show'
+      has_destroy: 'Has Destroy'
+      has_index: 'Has Index'
+      description: 'Description'
+      created_at: 'Created At'
+      updated_at: 'Updated At'
+  #END OF VIEWS VARIABLES DO NOT DELETE OR MOVE OR TAB THIS COMMENT
+  
+  activerecord:
+    errors: 
+      template:
+        header:
+          one: "1 error prohibited this %{model} from being saved:"
+          other: "%{count} errors prohibited this %{model} from being saved:"
+        body: " There were problems with the following fields:"
+      messages:
+        invalid_attachment_size: " is outside the limit."
+        invalid_attachment_content_type: " error, only the image files (jpg / jpeg / png / gif / bmp) are allowed."
+        taken: " Existing record."
+        invalid: " Field not valid."
+        blank: " can not be empty."
+        too_short: " too short."
+        too_long: " too long."
+        not_a_number: " is not a numeric value."
+        not_saved: "%{count} errors prohibited this %{model} from being saved:"
+        rol_type: "Yo must select At least one role type."
+        access_denied: "You do not have permission to do this action."
+        
+    models:
+      user: "User"
+      users: "Users"
+      role: "Rol"
+      roles: "Rols"
+      registration: "Registration"
+      registrations: "Registrations"
+      session: "session"
+      sessions: "Sessions"
+      welcome: "Welcome!"
+      welcomes: "Welcome!"
+      password: "Password"     
+      passwords: "Passwords"
+      confirmation: "Confirmation"
+      confirmations: "Confirmations"
+      unlock: "Unlock"      
+      unlocks: "Unlocks"     
+      test: Test      
+      tests: Tests
+      custom_scaffold: 'Custom Scaffold'
+      custom_scaffolds: 'Custom Scaffolds'
+      column_attribute: 'Column Attribute'
+      column_attributes: 'Column Attributes'
+      permission: 'Permission'
+      permissions: 'Permissions'
+      #END OF MODELS DO NOT DELETE OR MOVE OR TAB THIS COMMENT
+    
+    attributes:
+      user:
+        login: "Log In: "
+        first_name: "Name(s): "
+        last_name: "Last Name: "
+        phone1: "Phone: "
+        cellphone: "Mobile: "
+        fax: "Fax: "
+        address1: "Address 1: "
+        address2: "Address 2: "
+        city: "City: "
+        state: "State: "
+        zip: "Zip: "
+        country: "Country: "
+        role_id:  "Rol: "
+        active: "Active: "
+        username: "Username: "
+        email: "E-mail: "
+        login: "E-mail or Username: "
+        remember_me: "Keep me logged in: "
+        password: "Password: "
+        password_confirmation: "Password Confirmation: "
+        current_password: "Current Password: "
+        created_at: "Created At: "
+        updated_at: "Updated At: "        
+      role:
+        name: "Name: "
+        protected: "Protected: "
+        description: "Description: "
+        superadmin: "Super Administrator: "
+        administrator: "Administrator: "
+        guess: "Guess: "
+        created_at: "Created At: "
+        updated_at: "Updated At: "        
+      custom_scaffold:
+        id: 'Id: '
+        scaffold_name: 'Scaffold Name: '
+        i18n_scaffold_name: "i18n Scaffold Name: " 
+        i18n_id: "I18n for 'Id': "
+        i18n_created_at: "I18n for  'Created at': "
+        i18n_updated_at: "I18n for 'Updated at': "
+        index_id: "Show 'Id' in Index View: "
+        show_id: "Show 'Id' in Show View: "         
+        columns_number: 'Columns Number: '
+        index_created_at: 'Index Created At: '
+        index_updated_at: 'Index Updated At: '
+        show_created_at: 'Show Created At: '
+        show_updated_at: 'Show Updated At: '
+        require_authentication: 'Require Authentication: '
+        created_at: 'Created At: '
+        updated_at: 'Updated At: '
+      column_attribute:
+        id: 'Id: '
+        custom_scaffold_id: 'Custom Scaffold: '
+        column_name: 'Column Name: '
+        i18n_column_name: 'i18n Column Name: '
+        column_type: 'Column Type: '
+        is_readonly: 'Is Read Only: '
+        column_position: 'Column Position: '
+        column_description: 'Column Description: '
+        default_value: 'Default Value: '
+        is_required: 'Is Required: '
+        is_unique: 'Is Unique: '
+        validates_with_scope: 'Validates With Scope: '
+        select_display: 'Select Display: '
+        select_value: 'Select Value: '
+        min_length: 'Min Length: '
+        max_length: 'Max Length: '
+        scale_value: 'Scale Value: '
+        index_display: 'Index Display: '
+        show_display: 'Show Display: '
+        index_display_format: 'Index Display Format: '
+        index_display_format_option: 'Index Display Format Option: '
+        show_display_format: 'Show Display Format: '
+        show_display_format_option: 'Show Display Format Option: '
+        css_class: 'Custom Class: '
+        css_id: 'Custom: '
+        placeholder: 'Placeholder: '
+        title: 'Title: '
+        validation_type: 'Validation Type: '
+        scope_validation: 'Scope Validation: '
+        created_at: 'Created At: '
+        updated_at: 'Updated At: '
+      permission:
+        id: 'Id: '
+        role_id: 'Role: '
+        model: 'Model: '
+        protected: 'Protected: '
+        private: 'Private: '
+        private_key: 'Private Key: '
+        foreign_key: 'Foreign Key: '        
+        custom_action: 'Custom Action: '
+        custom_action_name: 'Custom Action Name: '
+        has_new: 'Has New: '
+        has_edit: 'Has Edit: '
+        has_show: 'Has Show: '
+        has_destroy: 'Has Destroy: '
+        has_index: 'Has Index: '
+        description: 'Description: '
+        created_at: 'Created At: '
+        updated_at: 'Updated At: '
+      #END OF FORM VARIABLES DO NOT DELETE OR MOVE OR TAB THIS COMMENT

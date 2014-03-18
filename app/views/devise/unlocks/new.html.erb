@@ -1,0 +1,13 @@
+<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true, :required => true, :minlength => 6, :maxlength => 60, :size => 40, :placeholder => t('layouts.application.required'), :title => t('layouts.devise.enter_email') %>
+  </div><br>
+  
+  <div><%= f.submit t(:send), data: {disable_with: t("actions.sending_email")}, :title => t(:send), :class => "btn btn-sm btn-primary"  %></div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+

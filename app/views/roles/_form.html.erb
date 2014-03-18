@@ -1,0 +1,23 @@
+<%= form_for(@role) do |f| %>
+  <%= render "partials/form_errors" %>
+  <div class="newspaper">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :required => true, :placeholder => t('layouts.application.required') %>
+    </div>
+    <div class="field">
+      <%= f.label :protected %>
+      <%= f.check_box :protected %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, :required => true, :placeholder => t('layouts.application.required') %>
+    </div>
+  </div>
+
+  <!--HERE GOES NESTED FORM-->
+
+  <div class='actions'>
+    <%= f.submit data: {disable_with: t("actions.#{action_name}ing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :class => "btn btn-sm btn-primary" %>
+  </div>
+<% end %>

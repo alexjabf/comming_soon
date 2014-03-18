@@ -1,0 +1,51 @@
+<%unless @role.protected.nil? %>
+  <p>
+    <strong><%= t('.name') %></strong>
+    <%= @role.name %>
+  </p>
+<%end%>
+<%unless @role.protected.nil?%>
+  <p>
+    <strong><%= t('.protected') %></strong>
+    <%= t(@role.protected.to_s)%>
+  </p>
+<%end%>
+<%unless @role.superadmin.nil?%>
+  <p>
+    <strong><%= t('.superadmin') %></strong>
+    <%= t(@role.superadmin.to_s)%>
+  </p>
+<%end%>
+<%unless @role.administrator.nil?%>
+  <p>
+    <strong><%= t('.administrator') %></strong>
+    <%= t(@role.administrator.to_s)%>
+  </p>
+<%end%>
+<%unless @role.guess.nil?%>
+  <p>
+    <strong><%= t('.guess') %></strong>
+    <%= t(@role.guess.to_s)  %>
+  </p>
+<%end%>
+<%unless @role.description.nil?%>
+  <p>
+    <strong><%= t('.description') %></strong>
+    <%= @role.description %>
+  </p>
+<%end%>
+<%unless @role.created_at.nil?%>
+  <p>
+    <strong><%= t('.created_at') %></strong>
+    <%=  I18n.l @role.created_at, :format => :long if @role.created_at%>
+  </p>
+<%end%>
+<%unless @role.updated_at.nil?%>
+  <p>
+    <strong><%= t('.updated_at') %></strong>
+    <%= I18n.l @role.updated_at, :format => :long if @role.updated_at%>
+  </p>
+<%end%>
+
+
+<!--HERE GOES NESTED INDEX-->

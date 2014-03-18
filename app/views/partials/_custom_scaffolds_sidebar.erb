@@ -1,0 +1,47 @@
+<%if signed_in?%>
+  <%=link_to root_path, title: t("layouts.application.tools"), :class=>"list-group-item", :id => "sidebar-title" do%>
+    <span><%=t("layouts.application.tools")%></span>
+  <%end%>
+  <%=link_to root_path, title: t("layouts.application.return_to_my_application"), :class=>"list-group-item", :id => "sidemenu-return_to_app" do%>
+    <i class="icon-circle-arrow-right"></i><%= t("layouts.application.return_to_my_application") %>
+  <%end%>
+  <%if can?  :index, CustomScaffold%>
+    <%=link_to custom_scaffolds_path, title: t("activerecord.models.custom_scaffolds"), :class=>"list-group-item", :id => "sidemenu-custom_scaffolds" do%>
+      <i class="icon-circle-arrow-right"></i><%= t("activerecord.models.custom_scaffolds") %>
+    <%end%>
+  <%end%>
+  <%if can?  :new, CustomScaffold%>
+    <%=link_to new_custom_scaffold_path, title: t("custom_scaffolds.create_custom_scaffold"), :class=>"list-group-item", :id => "sidemenu-create-custom_scaffold" do%>
+      <i class="icon-circle-arrow-right"></i><%= t("custom_scaffolds.create_custom_scaffold") %>
+    <%end%>
+  <%end%>
+  <%if can? :create, CustomScaffold and can? :destroy, CustomScaffold%>
+    <%=link_to custom_scaffolds_rebuild_entire_application_path, title: t("custom_scaffolds.tools.rebuild_app"), :class=>"list-group-item", :id => "sidemenu-rebuild-app", :remote => true do%>
+      <i class="icon-circle-arrow-right"></i><%= t("custom_scaffolds.tools.rebuild_app") %>
+    <%end%>
+  <%end%>
+  <%if can? :index, SchemaMigration and%>
+    <%=link_to schema_migrations_path, title: t("activerecord.models.schema_migrations"), :class=>"list-group-item", :id => "sidemenu-column_attributes" do%>
+      <i class="icon-circle-arrow-right"></i><%= t("activerecord.models.schema_migrations") %>
+    <%end%>
+  <%end%>
+  <%=link_to development_tools_erd_path, title: t("layouts.application.erd"), :class=>"list-group-item", :id => "sidemenu-development_tools_erd" do%>
+    <i class="icon-wrench"></i><%= t("layouts.application.erd") %>
+  <%end%>
+<%else%>
+  <%=link_to root_path, title: t("layouts.application.menu"), :class=>"list-group-item", :id => "sidebar-title" do%>
+    <span><%=t("layouts.application.menu")%></span>
+  <%end%>
+  <%=link_to new_user_session_path, title: t(:login), :class=>"list-group-item", :id => "sidemenu-sessions" do%>
+    <i class="icon-signin"></i><span><%=t(:login)%></span>
+  <%end%>
+  <%= link_to new_user_registration_path, title: t(:sign_up), :class=>"list-group-item", :id => "sidemenu-registrations" do %>
+    <i class="icon-user"></i><span><%= t(:sign_up) %></span>
+  <%end%>
+<%end%>
+
+<% if controller_name == "custom_scaffolds1" and action_name != "index" and action_name != "show" %>
+  <div id="current-element">
+    <h6 id="main-title" class ="selected-element"><%=t('custom_scaffolds.current_element')%></h6>
+  </div>
+<% end %>

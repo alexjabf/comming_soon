@@ -1,0 +1,50 @@
+<%if show_quick_search_form? %>
+  <%=render "partials/pagination"%>
+<%end%>
+<div id="action-links">
+  <%=link_to :back, data: {disable_with: t("actions.going_back")}, :title => t(:go_back), :class => "btn btn-xs btn-default" do%>
+    <%=t(:go_back)%>
+  <%end%>
+  <%if action_name == "new" or action_name == "create"%>
+    <%if can? :index, to_model(controller_name) %>
+      <%=link_to eval("#{controller_name}_path"), data: {disable_with: t("actions.returning",  model: t("activerecord.models.#{controller_name}").titlecase)}, :title => t("actions.return_to",  model: t("activerecord.models.#{controller_name.pluralize}")), :class => "btn btn-xs btn-info" do%>
+        <%=t("actions.return_to",  model: t("activerecord.models.#{controller_name.pluralize}"))%>
+      <%end%>
+    <%end%>
+  <%elsif action_name == "index" %>
+    <%if can? :new, to_model(controller_name) %>
+      <%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: t("actions.creating",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-success" do%>
+        <%=t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+      <%end%>
+    <%end%> 
+  <%elsif action_name == "edit" or action_name == "update" or action_name == "show"%>
+    <%if can? :index, to_model(controller_name) %>
+      <%=link_to eval("#{controller_name}_path"), data: {disable_with: t("actions.returning",  model: t("activerecord.models.#{controller_name}").titlecase)}, :title => t("actions.return_to",  model: t("activerecord.models.#{controller_name.pluralize}")), :class => "btn btn-xs btn-info" do%>
+        <%=t("actions.return_to",  model: t("activerecord.models.#{controller_name.pluralize}"))%>
+      <%end%>
+    <%end%> 
+    <%if can? :new, to_model(controller_name) %>
+      <%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: t("actions.creating",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-success" do%>
+        <%=t("actions.new",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+      <%end%>
+    <%end%>
+    <%if controller_name == "users" and @user.id != current_user.id%>
+      <%if can? :edit, User %>
+        <%=link_to edit_admin_user_path(@user), data: {disable_with: t("actions.editing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-warning" do%>
+          <%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+        <%end%>
+      <%end%>
+    <%else%>
+      <%if can? :edit, to_model(controller_name) %>
+        <%=link_to eval("edit_#{controller_name.singularize}_path(@#{controller_name.singularize})"), data: {disable_with: t("actions.editing",  model: t("activerecord.models.#{controller_name.singularize}").titlecase)}, :title => t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-warning" do%>
+          <%=t("actions.edit",  model: t("activerecord.models.#{controller_name.singularize}"))%>
+        <%end%>
+      <%end%>
+    <%end%>
+    <%if can? :destory, to_model(controller_name) %>
+      <%=link_to eval("@#{controller_name.singularize}"), method: :delete, data: {disable_with: t("actions.deleting",  model: t("activerecord.models.#{controller_name.singularize}").titlecase), confirm: t(:are_you_sure?, model: t("activerecord.models.#{controller_name.singularize}").downcase) }, :title => t("actions.destroy",  model: t("activerecord.models.#{controller_name.singularize}")), :class => "btn btn-xs btn-danger" do%>
+        <%=t("actions.destroy",  model: t("activerecord.models.#{controller_name.singularize}").downcase)%>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>

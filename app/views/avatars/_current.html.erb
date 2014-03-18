@@ -1,0 +1,9 @@
+<div class="avatar-current">
+  <%if signed_in?%>
+    <%= image_tag(current_user.logo.blank? ? "missing.png": current_user.logo) %>
+  <%else%>
+    <%= image_tag("missing.png") %>
+  <%end%>
+</div>
+
+

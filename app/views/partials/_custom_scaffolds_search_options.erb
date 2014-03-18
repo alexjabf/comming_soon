@@ -1,0 +1,75 @@
+<script>
+<%if @has_params%>
+    /*function updateTable(element) {
+     var element_id = $(element).attr('id');
+     var value = $(element).val();
+     alert(element_id);
+     var old_search_value = decodeURIComponent((new RegExp('[?|&]search=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+     if (value) {
+     alert(value);
+     var old_value = decodeURIComponent((new RegExp('[?|&]' + element_id + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+     window.location = document.URL.replace('search=' + old_search_value, 'search=' + $('#search').val()).replace(element_id + '=' + old_value, element_id + '=' + value);
+     }
+     }
+     function showSearchCriteria() {
+     $("#search-critaria").toggle('slow');
+     }*/
+<%end%>
+  function showSearchCriteria() {
+    $("#search-critaria").toggle('slow');
+  }
+</script>
+
+<% if eval("@#{controller_name}.count") > 0 or @has_params%>
+  <table>
+    <thead>
+      <tr>
+        <th><%=t('partials.search_options.search_options')%></th>     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= form_tag eval("#{controller_name}_path"), :method => "get", :id => "quick-search-form" do %>
+            <%= autocomplete_field_tag :search, params[:search], autocomplete_global_index_path(controller_name), :maxlength => 50, :style => "margin-top:10px;" %>  
+            <%= select_tag(:search_by, options_for_select([[t("partials.search_options.like"), false], [t("partials.search_options.equal"), true]], params[:search_by]), {:prompt => t('partials.search_options.search_by'), :onchange => "updateTable(this)"})%>           
+            <%= select_tag(:order_by, options_for_select(@indexable_columns, params[:order_by]), {:prompt => t('partials.search_options.order_by'), :onchange => "updateTable(this)"})%> 
+            <%= select_tag(:sort_by, options_for_select([[t("partials.search_options.asc"), "ASC"], [t("partials.search_options.desc"), "DESC"]], params[:sort_by]), {:prompt => t('partials.search_options.sort_by'), :onchange => "updateTable(this)"})%>   
+            <%= select_tag(:per_page, options_for_select([10,20,30,40,50,60,70,80,90,100, [t('partials.search_options.all_records'), eval("@#{controller_name}.count")]], params[:per_page].to_i), {:prompt => t('partials.search_options.select_page_numbers'), :onchange => "updateTable(this)"})%>   
+            <%=link_to eval("#{controller_name}_path"), :title => t("layouts.application.form_reset"), :class => 'btn btn-sm btn-default', :id => "quick-search-reset" do%>
+              <i class="icon-refresh"></i>
+            <%end%>           
+            <%= button_tag t("partials.search_options.quick_search"), :class => 'btn btn-sm btn-primary', :id => "quick-search-button" %>            
+            <%= link_to t('partials.search_options.advanced_search'),  "#myModal", :'data-toggle'=>"modal", :'data-target'=>"#myModal", :title=>t('partials.search_options.advanced_search'), :class => 'btn btn-sm btn-info' if File.exist?("app/views/#{controller_name}/_search_form.html.erb") %>          
+            <%= hidden_field_tag :current_controller, :current_controller, :value => controller_name, :read_only => true, :id=>"current-controller" %>  
+          <%end%>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<%end%>  
+<%if @has_params%>
+  <h5><%=link_to t('partials.search_options.search_critaria'), "#", :onclick => "showSearchCriteria();", :title => t('partials.search_options.search_critaria')%></h5>
+  <div id="search-critaria" class="newspaper" style="margin-bottom: 20px; display:none;">
+    <%params.each do |param|%>
+      <%if is_searchable?(param[0], controller_name) and !param[1].blank?%>
+        <%=t("#{controller_name}.show.#{param[0]}")%><%=param[1]%><br>
+      <%end%>
+    <%end%>
+  </div>
+<%end%>
+
+<%=render "partials/pagination"%>
+<% if File.exist?("app/views/#{controller_name}/_search_form.html.erb") and action_name == "index" %>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" hidden="true" style="display:none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><%= t('partials.search_options.advanced_search')%></h4>
+        </div>
+        <%=render "#{controller_name}/search_form" %>
+      </div>
+    </div>
+  </div>
+<% end %>

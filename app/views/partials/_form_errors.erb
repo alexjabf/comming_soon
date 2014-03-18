@@ -1,0 +1,15 @@
+<%@model = eval("@#{controller_name.singularize}") -%>
+<% if @model.errors.any? %>
+  <div id="error_explanation">
+    <% if @model.errors.count == 1 %>
+      <h5><%= t('activerecord.errors.template.header.one', model: t("activerecord.models.#{controller_name.singularize.gsub(" ", "")}")) %></h5>
+    <% else %>
+      <h5><%= t('activerecord.errors.template.header.other', model: t("activerecord.models.#{controller_name.singularize.gsub(" ", "")}"), :count => @model.errors.count) %></h5>
+    <% end %>
+    <ul>
+      <% @model.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

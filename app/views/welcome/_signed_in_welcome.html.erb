@@ -1,0 +1,58 @@
+<div class="left-custom-column">
+  <% unless @app.account.blank? %>
+    <p>
+      <b><%= t'.account_id' %></b> <%= @app.account.select_display %>
+    </p>
+  <% end %>
+  <% unless @app.app_name.blank? %>
+    <p>
+      <b><%= t'.app_name' %></b> <%= @app.app_name %>
+    </p>
+  <% end %>
+  <% unless @app.custom_scaffolds_number.blank? %>
+    <p>
+      <b><%= t'.custom_scaffolds_number' %></b> <%= number_with_delimiter(@app.custom_scaffolds_number, locale: session[:locale]) %>
+    </p>
+  <% end %>
+  <% unless @app.app_status.blank? %>
+    <p>
+      <b><%= t'.app_status' %></b> <%= @app.app_status %>
+    </p>
+  <% end %>
+  <% unless @app.cost.blank? %>
+    <p>
+      <b><%= t'.cost' %></b> <%= number_to_currency(@app.cost, locale: session[:locale]) %>
+    </p>
+  <% end %>
+</div>
+
+<div class="right-custom-column">
+  <% unless @app.available_for_download.blank? %>
+    <p>
+      <b><%= t'.available_for_download' %></b> <%= t(@app.available_for_download.to_s) %>
+    </p>
+  <% end %>
+  <% unless @app.custom_template.blank? %>
+    <p>
+      <b><%= t'.custom_template' %></b> <%= t(@app.custom_template.to_s) %>
+    </p>
+  <% end %>
+  <% unless @app.app_template_id.blank? %>
+    <p>
+      <b><%= t'.app_template_id' %></b> <%= "Rails" %>
+    </p>
+  <% end %>
+  <% unless @app.created_at.blank? %>
+    <p>
+      <b><%= t'.created_at' %></b> <%= I18n.l @app.created_at, :format => :long %>
+    </p>
+  <% end %>
+  <% unless @app.updated_at.blank? %>
+    <p>
+      <b><%= t'.updated_at' %></b> <%= I18n.l @app.updated_at, :format => :long %>
+    </p>
+  <% end %>
+
+</div>
+
+<!--HERE GOES NESTED INDEX-->
