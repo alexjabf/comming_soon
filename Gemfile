@@ -48,12 +48,8 @@ group :development, :test do
   gem "rails-erd"
 end
 
-gem 'rubykeyword'
+
 gem 'passenger'
-gem 'thin'
-gem 'faye'
-gem 'jquery-turbolinks'
-gem 'nprogress-rails'
 gem 'mysql2'
 gem 'devise'
 gem "cancan"
@@ -67,8 +63,5 @@ gem 'i18n-tasks', '~> 0.1.0'#rake i18n:missing
 gem 'avatars_for_rails'
 gem 'country_select'
 gem "geocoder"
-gem "nested_form"
-gem "faker"
-gem "seed_dump"#https://github.com/rroblak/seed_dump rake db:seed:dump
 gem 'activerecord-session_store'
 #gem "protected_attributes"

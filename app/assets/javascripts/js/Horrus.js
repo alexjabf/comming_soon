@@ -39,7 +39,7 @@ jQuery(document).ready(function () {
         targetDate: {
             'day': 1,
             'month': 1,
-            'year': 2015,
+            'year': 2017,
             'hour': 0,
             'min': 0,
             'sec': 0
