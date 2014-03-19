@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  before_filter :set_icon  
-  before_filter :get_data, :except => [:show, :destroy]
   load_and_authorize_resource except: [:create]
 
   # GET /users
   def index
+    @users = User.all
   end
 
   # GET /users/1
@@ -16,7 +15,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    #BUILD NESTED ATTRIBUTES DO NO DELETE THIS COMMENT
   end
 
   # GET /users/1/edit
@@ -55,19 +53,6 @@ class UsersController < ApplicationController
     else
       redirect_to users_url, notice:  t("messages.error.you_must_select_at_least_one.male",  model: t("activerecord.models.#{controller_name.singularize}").downcase)    
     end
-  end
-
-  def get_data
-    data
-  end
-
-  def set_icon
-    @icon = "icon"
-  end
-      
-  def generate_random_data
-    generate_data
-    redirect_to eval("#{params[:controller_name]}_path"), notice:  t("actions.created.male",  model: t("activerecord.models.#{controller_name}").downcase)
   end
 
   private

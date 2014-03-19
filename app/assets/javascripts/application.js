@@ -10,21 +10,20 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 // 
-//= require jquery
-//= require jquery.turbolinks
-//= require jquery-1.9.1
-//= require jquery.tablesorter
-//= require jquery_ujs
-//= require jquery.ui.all
-//= require avatars_for_rails
-//= require jquery_nested_form
-//= require autocomplete-rails
-//= require turbolinks
-//= require nprogress
-//= require nprogress-turbolinks
-//= require jquery.filtertable.min
-//= require jquery.inspect
-//= require modernizr-2.7.1.dev
-//= require prefixfree.min
-//= require custom
-//= require_tree ./js
+//= require js/vendor/modernizr.custom
+//= require js/vendor/jquery-1.11.0.min
+//= require js/vendor/bootstrap.min
+//= require js/plugins/jquery.easing.1.3
+//= require js/plugins/uikit/uikit
+//= require js/plugins/jquery.lwtCountdown-1.0
+//= require js/plugins/jquery.scrollto
+//= require js/plugins/jquery.parallax-1.1.3
+//= require js/plugins/owl-carousel/owl.carousel.min
+//= require js/plugins/fancybox/jquery.mousewheel-3.0.6.pack
+//= require js/plugins/fancybox/jquery.fancybox
+//= require js/plugins/fancybox/helpers/jquery.fancybox-media
+//= require js/plugins/jquery.fitvids
+//= require js/plugins/jquery.cbpQTRotator.min
+//= require js/plugins/gmaps.js
+//= require js/plugins/retina-1.1.0
+//= require js/Horrus

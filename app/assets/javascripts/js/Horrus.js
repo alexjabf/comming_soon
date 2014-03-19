@@ -213,13 +213,13 @@ jQuery(document).ready(function () {
     map = new GMaps({
         el: '#map',
         scrollwheel: false,
-        lat: 29.983775,
-        lng: 31.167161
+        lat: 28.6657928,
+        lng: -106.0641978
     });
     map.addMarker({
-        lat: 29.983775,
-        lng: 31.167161,
-        icon: "images/marker.png"
+        lat: 28.6657928,
+        lng: -106.0641978,
+        icon: "/assets/images/marker.png"
     });
 
 

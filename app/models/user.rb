@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  belongs_to :role
-
   #ASSOCIATIONS
   has_one :account
   has_many :apps, :through => :accounts, :dependent => :destroy
@@ -12,7 +10,7 @@ class User < ActiveRecord::Base
   #NESTED ATTRIBUTES
 
   #VALIDATIONS
-  validates :first_name, :last_name, :active, :role_id, :presence => true
+  validates :first_name, :last_name, :active, :presence => true
   USER_FIRST_NAME = /^[a-zA-Z., ]+$/
   USER_LAST_NAME = /^[a-zA-Z., ]+$/
   USER_ACTIVE = /^t|^f/
