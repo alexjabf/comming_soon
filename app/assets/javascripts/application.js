@@ -15,7 +15,7 @@
 //= require js/vendor/bootstrap.min
 //= require js/plugins/jquery.easing.1.3
 //= require js/plugins/uikit/uikit
-//= require js/plugins/jquery.lwtCountdown-1.0
+//= require js/plugins/jquery.countdown
 //= require js/plugins/jquery.scrollto
 //= require js/plugins/jquery.parallax-1.1.3
 //= require js/plugins/owl-carousel/owl.carousel.min
