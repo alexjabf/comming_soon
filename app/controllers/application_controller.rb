@@ -15,16 +15,14 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
   end
   
-  if Rails.env == "production"
-    rescue_from Exception do |exception|
-      render root_path
-    end
-    rescue_from ActiveRecord::RecordNotFound do |exception|
-      render root_path
-    end 
-    rescue_from ActionController::RoutingError do |exception|
-      render root_path
-    end
+  rescue_from Exception do |exception|
+    render root_path
+  end
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    render root_path
+  end 
+  rescue_from ActionController::RoutingError do |exception|
+    render root_path
   end
 
 end
